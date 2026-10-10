@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Studio & Design System Selector | Client Intelligence Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  
+  <style>
+    /* ==========================================================================
+       DYNAMIC THEME TOKENS
+       ========================================================================== */
+    :root {
+      /* Default: Theme 1 - Precision Engineering */
+      --th-bg: #f8fafc;
+      --th-surface: #ffffff;
+      --th-surface-alt: #f1f5f9;
+      --th-ink: #0f172a;
+      --th-text: #334155;
+      --th-muted: #64748b;
+      --th-primary: #0284c7;
+      --th-primary-hover: #0369a1;
+      --th-primary-text: #ffffff;
+      --th-accent: #2563eb;
+      --th-border: #e2e8f0;
+      --th-border-strong: #cbd5e1;
+      --th-badge-bg: #e0f2fe;
+      --th-badge-text: #0369a1;
+      --th-font-heading: 'Inter', sans-serif;
+      --th-font-body: 'Inter', sans-serif;
+      --th-font-mono: 'JetBrains Mono', monospace;
+      --th-radius-sm: 4px;
+      --th-radius: 8px;
+      --th-radius-lg: 12px;
+      --th-radius-pill: 9999px;
+      --th-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+      --th-header-bg: #0f172a;
+      --th-header-text: #ffffff;
+      --th-header-line: #1e293b;
+      --th-tag: "Precision Engineering";
+    }
+
+    /* THEME 2: Swiss Pristine White */
+    [data-theme="white"] {
+      --th-bg: #ffffff;
+      --th-surface: #ffffff;
+      --th-surface-alt: #f9fafb;
+      --th-ink: #000000;
+      --th-text: #374151;
+      --th-muted: #6b7280;
+      --th-primary: #111827;
+      --th-primary-hover: #000000;
+      --th-primary-text: #ffffff;
+      --th-accent: #2563eb;
+      --th-border: #e5e7eb;
+      --th-border-strong: #d1d5db;
+      --th-badge-bg: #f3f4f6;
+      --th-badge-text: #1f2937;
+      --th-font-heading: 'Plus Jakarta Sans', sans-serif;
+      --th-font-body: 'Inter', sans-serif;
+      --th-font-mono: 'JetBrains Mono', monospace;
+      --th-radius-sm: 6px;
+      --th-radius: 12px;
+      --th-radius-lg: 16px;
+      --th-radius-pill: 9999px;
+      --th-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+      --th-header-bg: #ffffff;
+      --th-header-text: #111827;
+      --th-header-line: #e5e7eb;
+      --th-tag: "Swiss Pristine White";
+    }
+
+    /* THEME 3: Executive Architectural (Northline Luxury) */
+    [data-theme="executive"] {
+      --th-bg: #fbf9f5;
+      --th-surface: #ffffff;
+      --th-surface-alt: #f5f0e6;
+      --th-ink: #0b1220;
+      --th-text: #2d3748;
+      --th-muted: #718096;
+      --th-primary: #c9a35b;
+      --th-primary-hover: #b58f47;
+      --th-primary-text: #0b1220;
+      --th-accent: #1e3a8a;
+      --th-border: #e2d9cc;
+      --th-border-strong: #c8bead;
+      --th-badge-bg: rgba(201, 163, 91, 0.15);
+      --th-badge-text: #8c6d2d;
+      --th-font-heading: 'Fraunces', serif;
+      --th-font-body: 'Inter', sans-serif;
+      --th-font-mono: 'JetBrains Mono', monospace;
+      --th-radius-sm: 6px;
+      --th-radius: 14px;
+      --th-radius-lg: 20px;
+      --th-radius-pill: 9999px;
+      --th-shadow: 0 12px 36px -4px rgba(11, 18, 32, 0.08);
+      --th-header-bg: #0b1220;
+      --th-header-text: #ffffff;
+      --th-header-line: rgba(255, 255, 255, 0.12);
+      --th-tag: "Executive Architectural";
+    }
+
+    /* THEME 4: Casual Modern Tech */
+    [data-theme="casual"] {
+      --th-bg: #f7f9f9;
+      --th-surface: #ffffff;
+      --th-surface-alt: #edf2f2;
+      --th-ink: #134e4a;
+      --th-text: #283e3c;
+      --th-muted: #627b79;
+      --th-primary: #0d9488;
+      --th-primary-hover: #0f766e;
+      --th-primary-text: #ffffff;
+      --th-accent: #f97316;
+      --th-border: #d5e0df;
+      --th-border-strong: #bccac9;
+      --th-badge-bg: #ccfbf1;
+      --th-badge-text: #0f766e;
+      --th-font-heading: 'Plus Jakarta Sans', sans-serif;
+      --th-font-body: 'Plus Jakarta Sans', sans-serif;
+      --th-font-mono: 'JetBrains Mono', monospace;
+      --th-radius-sm: 8px;
+      --th-radius: 16px;
+      --th-radius-lg: 24px;
+      --th-radius-pill: 9999px;
+      --th-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.08);
+      --th-header-bg: #ffffff;
+      --th-header-text: #134e4a;
+      --th-header-line: #e2e8e8;
+      --th-tag: "Casual Modern Tech";
+    }
+
+    /* ==========================================================================
+       BASE STYLES
+       ========================================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background 0.25s ease, border-color 0.25s ease, color 0.2s ease, box-shadow 0.25s ease;
+    }
+
+    body {
+      background: var(--th-bg);
+      color: var(--th-text);
+      font-family: var(--th-font-body);
+      line-height: 1.55;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP THEME SWITCHER TOOLBAR */
+    .studio-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10000;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: #ffffff;
+    }
+
+    .studio-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .studio-badge {
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .theme-buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .theme-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 7px 14px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .theme-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+    }
+
+    .theme-btn.active {
+      background: #ffffff;
+      color: #0f172a;
+      border-color: #ffffff;
+      box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
+    }
+
+    /* CONTAINER WRAPPER */
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    /* LIVE PREVIEW HEADER */
+    .site-nav {
+      background: var(--th-header-bg);
+      color: var(--th-header-text);
+      border: 1px solid var(--th-header-line);
+      border-radius: var(--th-radius-lg);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      box-shadow: var(--th-shadow);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--th-header-text);
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--th-primary);
+      color: var(--th-primary-text);
+      border-radius: var(--th-radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .brand-text h2 {
+      font-family: var(--th-font-heading);
+      font-size: 1.1rem;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .brand-text span {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: var(--th-radius-pill);
+      opacity: 0.8;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="engineering"] .nav-links a.active,
+    :root:not([data-theme]) .nav-links a.active,
+    [data-theme="executive"] .nav-links a.active {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 20px;
+      border-radius: var(--th-radius);
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--th-primary);
+      color: var(--th-primary-text);
+      box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-primary:hover {
+      background: var(--th-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--th-border-strong);
+      color: var(--th-ink);
+    }
+
+    .btn-outline:hover {
+      background: var(--th-surface-alt);
+    }
+
+    /* GRID & CARDS */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: var(--th-surface);
+      border: 1px solid var(--th-border);
+      border-radius: var(--th-radius-lg);
+      padding: 24px;
+      box-shadow: var(--th-shadow);
+      position: relative;
+    }
+
+    .card-title {
+      font-family: var(--th-font-heading);
+      color: var(--th-ink);
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: var(--th-radius-pill);
+      font-size: 0.74rem;
+      font-weight: 700;
+      background: var(--th-badge-bg);
+      color: var(--th-badge-text);
+      letter-spacing: 0.02em;
+    }
+
+    .badge-danger {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .badge-success {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    /* SCORE GAUGE COMPONENT */
+    .gauge-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--th-surface);
+      border: 1px solid var(--th-border);
+      border-radius: var(--th-radius-lg);
+      padding: 24px;
+      box-shadow: var(--th-shadow);
+    }
+
+    .score-circle {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: conic-gradient(var(--th-primary) 0% 86%, var(--th-surface-alt) 86% 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .score-circle-inner {
+      width: 58px;
+      height: 58px;
+      background: var(--th-surface);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--th-font-mono);
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--th-ink);
+    }
+
+    /* DATA TABLE */
+    .data-table-wrap {
+      background: var(--th-surface);
+      border: 1px solid var(--th-border);
+      border-radius: var(--th-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--th-shadow);
+      margin-bottom: 32px;
+    }
+
+    .table-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--th-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--th-surface-alt);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    th {
+      padding: 12px 24px;
+      color: var(--th-muted);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--th-border);
+    }
+
+    td {
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--th-border);
+      color: var(--th-text);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: var(--th-surface-alt);
+    }
+
+    .mono {
+      font-family: var(--th-font-mono);
+      font-size: 0.82rem;
+    }
+
+    /* THEME COMPARISON CARDS AT BOTTOM */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .comparison-card {
+      background: var(--th-surface);
+      border: 1px solid var(--th-border);
+      border-radius: var(--th-radius);
+      padding: 18px;
+      font-size: 0.84rem;
+    }
+
+    .comparison-card h4 {
+      font-family: var(--th-font-heading);
+      color: var(--th-ink);
+      font-size: 0.98rem;
+      margin-bottom: 6px;
+    }
+
+    .palette-swatches {
+      display: flex;
+      gap: 6px;
+      margin: 10px 0 14px;
+    }
+
+    .swatch {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 900px) {
+      .grid-3, .grid-2, .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP THEME SELECTOR BAR -->
+  <header class="studio-bar">
+    <div class="studio-bar-left">
+      <span class="studio-badge">Theme Studio</span>
+      <strong>Interactive Site Theme Selector</strong>
+    </div>
+
+    <div class="theme-buttons">
+      <button class="theme-btn active" onclick="switchTheme('engineering')">
+        📐 1. Precision Engineering
+      </button>
+      <button class="theme-btn" onclick="switchTheme('white')">
+        ⚪ 2. Swiss Pristine White
+      </button>
+      <button class="theme-btn" onclick="switchTheme('executive')">
+        🏛️ 3. Executive Architectural
+      </button>
+      <button class="theme-btn" onclick="switchTheme('casual')">
+        🌿 4. Casual Modern Tech
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ACTIVE THEME HERO BANNER -->
+    <div style="margin-bottom: 28px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
+      <div>
+        <span class="badge" id="activeThemeBadge" style="margin-bottom: 8px;">Active: Precision Engineering</span>
+        <h1 style="font-family: var(--th-font-heading); color: var(--th-ink); font-size: 2.2rem; line-height: 1.15;" id="themeHeroTitle">
+          Engineering & Technical Precision
+        </h1>
+        <p style="color: var(--th-muted); font-size: 1rem; max-width: 680px;" id="themeHeroDesc">
+          Clean blueprint CAD architecture with precision monospace metrics, structured soil diagnostics, and high-trust engineering certification.
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <button class="btn btn-primary" onclick="alert('Theme selected! This design can be set as the default for your projects.')">Select This Theme</button>
+        <button class="btn btn-outline" onclick="openDemoModal()">Preview Modal</button>
+      </div>
+    </div>
+
+    <!-- LIVE COMPONENT 1: SITE HEADER & NAVIGATION -->
+    <nav class="site-nav">
+      <a href="#" class="brand">
+        <div class="brand-icon">⬢</div>
+        <div class="brand-text">
+          <h2>Foundation Intelligence</h2>
+          <span>Structural & Geotechnical Lab</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#" class="active">Overview</a></li>
+        <li><a href="#">Crawl Audit</a></li>
+        <li><a href="#">Backlinks CRM</a></li>
+        <li><a href="#">Field Guide</a></li>
+        <li><a href="#">Calculators</a></li>
+        <li><a href="#">Downloads</a></li>
+      </ul>
+
+      <a href="#" class="btn btn-primary" style="padding: 7px 16px; border-radius: var(--th-radius-pill);">Schedule Inspection</a>
+    </nav>
+
+    <!-- LIVE COMPONENT 2: METRIC GAUGES & SCORECARDS -->
+    <div class="grid-3">
+      <!-- Card 1: Score -->
+      <div class="gauge-card">
+        <div class="score-circle">
+          <div class="score-circle-inner">86</div>
+        </div>
+        <div>
+          <span class="badge badge-success" style="margin-bottom: 4px;">Verified Passed</span>
+          <h3 class="card-title" style="margin: 0;">Composite Score</h3>
+          <p style="font-size: 0.82rem; color: var(--th-muted); margin-top: 2px;">7 weighted technical pillars</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Pier Depth Estimator -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+          <span class="badge">ASTM A500 Grade B</span>
+          <span class="mono" style="color: var(--th-primary); font-weight: 700;">22.4 FT</span>
+        </div>
+        <h3 class="card-title">Push Pier Bedrock Depth</h3>
+        <p style="font-size: 0.84rem; color: var(--th-muted); margin-bottom: 14px;">
+          Ozark cherty clay stratum driving depth calculated for 2,400 sq.ft home foundation load.
+        </p>
+        <div style="background: var(--th-surface-alt); padding: 8px 12px; border-radius: var(--th-radius-sm); font-size: 0.78rem; font-family: var(--th-font-mono);">
+          HYDRAULIC LOAD: 3,450 PSI
+        </div>
+      </div>
+
+      <!-- Card 3: Link CRM Action Card -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+          <span class="badge">Civic Authority</span>
+          <span class="mono" style="color: var(--th-muted); font-weight: 700;">DR 68</span>
+        </div>
+        <h3 class="card-title">City of Joplin Building Dept</h3>
+        <p style="font-size: 0.84rem; color: var(--th-muted); margin-bottom: 14px;">
+          Licensed contractor registry submission pitch ready for 1-click mailto dispatch.
+        </p>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-outline" style="flex: 1; padding: 6px 10px; font-size: 0.8rem;">View Script</button>
+          <button class="btn btn-primary" style="flex: 1; padding: 6px 10px; font-size: 0.8rem;">Launch Mailto</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIVE COMPONENT 3: FORENSIC DATA TABLE -->
+    <div class="data-table-wrap">
+      <div class="table-header">
+        <div>
+          <strong style="color: var(--th-ink); font-size: 1rem;">Crawl Database Sample</strong>
+          <span style="color: var(--th-muted); font-size: 0.82rem; margin-left: 8px;">Showing 3 of 31 audited URLs</span>
+        </div>
+        <span class="badge">Deterministic Scan</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>URL Endpoint</th>
+            <th>HTTP Status</th>
+            <th>TTFB Latency</th>
+            <th>Word Count</th>
+            <th>Diagnosis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong style="color: var(--th-ink); display: block;">/foundation-repair-joplin-mo/</strong>
+              <span class="mono" style="color: var(--th-muted); font-size: 0.78rem;">#1 Foundation Repair Pros</span>
+            </td>
+            <td><span class="badge badge-success">200 OK</span></td>
+            <td><span class="mono">340 ms</span></td>
+            <td><strong>1,840</strong> words</td>
+            <td><span class="badge badge-danger">Geo-Mismatch Bolivar</span></td>
+          </tr>
+          <tr>
+            <td>
+              <strong style="color: var(--th-ink); display: block;">/basement-waterproofing/</strong>
+              <span class="mono" style="color: var(--th-muted); font-size: 0.78rem;">Interior French Drain & Sump</span>
+            </td>
+            <td><span class="badge badge-success">200 OK</span></td>
+            <td><span class="mono">420 ms</span></td>
+            <td><strong>1,420</strong> words</td>
+            <td><span class="badge badge-success">Optimal Placement</span></td>
+          </tr>
+          <tr>
+            <td>
+              <strong style="color: var(--th-ink); display: block;">/local-sitemap.xml</strong>
+              <span class="mono" style="color: var(--th-muted); font-size: 0.78rem;">XML Sitemap Origin Endpoint</span>
+            </td>
+            <td><span class="badge badge-danger">404 Error</span></td>
+            <td><span class="mono">110 ms</span></td>
+            <td><strong>0</strong> words</td>
+            <td><span class="badge badge-danger">Origin Missing</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SIDE-BY-SIDE ARCHETYPE BREAKDOWN -->
+    <div style="margin-top: 56px;">
+      <h2 style="font-family: var(--th-font-heading); color: var(--th-ink); font-size: 1.6rem; margin-bottom: 6px;">
+        Theme Archetype Overview & Specs
+      </h2>
+      <p style="color: var(--th-muted); font-size: 0.95rem; margin-bottom: 24px;">
+        Click any theme above or review the specific personality, color tokens, and best-use cases below:
+      </p>
+
+      <div class="comparison-grid">
+        <!-- 1. Engineering -->
+        <div class="comparison-card">
+          <h4>1. Precision Engineering</h4>
+          <p style="color: var(--th-muted); margin-bottom: 8px;">Technical CAD & Geotechnical Precision</p>
+          <div class="palette-swatches">
+            <div class="swatch" style="background: #0f172a;" title="Slate Navy"></div>
+            <div class="swatch" style="background: #0284c7;" title="Cobalt CAD"></div>
+            <div class="swatch" style="background: #f8fafc;" title="Pure Blueprint"></div>
+            <div class="swatch" style="background: #e2e8f0;" title="Hairline Grid"></div>
+          </div>
+          <p><strong>Fonts:</strong> Inter + JetBrains Mono</p>
+          <p><strong>Vibe:</strong> High-tech software, structural engineering laboratory, civil blueprints.</p>
+          <p style="margin-top: 8px;"><strong>Best for:</strong> Geotechnical engineering, structural repair, forensic audits.</p>
+        </div>
+
+        <!-- 2. White -->
+        <div class="comparison-card">
+          <h4>2. Swiss Pristine White</h4>
+          <p style="color: var(--th-muted); margin-bottom: 8px;">Ultra-Clean Apple & Stripe Style</p>
+          <div class="palette-swatches">
+            <div class="swatch" style="background: #ffffff; border:1px solid #ccc;" title="Stark White"></div>
+            <div class="swatch" style="background: #111827;" title="Pitch Ink"></div>
+            <div class="swatch" style="background: #2563eb;" title="Electric Sapphire"></div>
+            <div class="swatch" style="background: #f3f4f6;" title="Light Gray"></div>
+          </div>
+          <p><strong>Fonts:</strong> Plus Jakarta Sans + Inter</p>
+          <p><strong>Vibe:</strong> Zero clutter, razor-sharp high contrast, crisp modern fintech feel.</p>
+          <p style="margin-top: 8px;"><strong>Best for:</strong> High-ticket consultants, modern enterprise agencies.</p>
+        </div>
+
+        <!-- 3. Executive -->
+        <div class="comparison-card">
+          <h4>3. Executive Architectural</h4>
+          <p style="color: var(--th-muted); margin-bottom: 8px;">Northline Luxury & Champagne Gold</p>
+          <div class="palette-swatches">
+            <div class="swatch" style="background: #0b1220;" title="Obsidian Dark"></div>
+            <div class="swatch" style="background: #c9a35b;" title="Champagne Gold"></div>
+            <div class="swatch" style="background: #fbf9f5;" title="Warm Paper Linen"></div>
+            <div class="swatch" style="background: #e2d9cc;" title="Warm Border"></div>
+          </div>
+          <p><strong>Fonts:</strong> Fraunces (Serif) + Inter</p>
+          <p><strong>Vibe:</strong> McKinsey, Wall Street, bespoke architectural heritage.</p>
+          <p style="margin-top: 8px;"><strong>Best for:</strong> Luxury property management, elite retainer clients.</p>
+        </div>
+
+        <!-- 4. Casual -->
+        <div class="comparison-card">
+          <h4>4. Casual Modern Tech</h4>
+          <p style="color: var(--th-muted); margin-bottom: 8px;">Friendly Neo-Tech & Soft Pills</p>
+          <div class="palette-swatches">
+            <div class="swatch" style="background: #0d9488;" title="Teal"></div>
+            <div class="swatch" style="background: #134e4a;" title="Forest Ink"></div>
+            <div class="swatch" style="background: #f7f9f9;" title="Soft Mint Gray"></div>
+            <div class="swatch" style="background: #f97316;" title="Warm Coral"></div>
+          </div>
+          <p><strong>Fonts:</strong> Plus Jakarta Sans (Rounded)</p>
+          <p><strong>Vibe:</strong> Warm, approachable, playful modern SaaS, soft rounded pills.</p>
+          <p style="margin-top: 8px;"><strong>Best for:</strong> Consumer-facing home services, friendly residential inspections.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const themesData = {
+      'engineering': {
+        name: 'Precision Engineering',
+        title: 'Engineering & Technical Precision',
+        desc: 'Clean blueprint CAD architecture with precision monospace metrics, structured soil diagnostics, and high-trust engineering certification.'
+      },
+      'white': {
+        name: 'Swiss Pristine White',
+        title: 'Swiss Pristine White & Minimalist Light',
+        desc: 'Stark white background with high-contrast obsidian typography, electric blue accents, razor-sharp hairline borders, and Stripe/Apple minimalism.'
+      },
+      'executive': {
+        name: 'Executive Architectural',
+        title: 'Executive Architectural & Heritage Luxury',
+        desc: 'Refined editorial serif typography (Fraunces) paired with deep obsidian navy, champagne gold accents, and institutional prestige.'
+      },
+      'casual': {
+        name: 'Casual Modern Tech',
+        title: 'Casual Modern Tech & Approachable SaaS',
+        desc: 'Warm soft-cream tones, friendly teal accents, rounded pill-shaped components, and welcoming, approachable micro-interactions.'
+      }
+    };
+
+    function switchTheme(themeKey) {
+      document.body.removeAttribute('data-theme');
+      if (themeKey !== 'engineering') {
+        document.body.setAttribute('data-theme', themeKey);
+      }
+
+      document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.toLowerCase().includes(themeKey)) {
+          btn.classList.add('active');
+        }
+      });
+
+      const d = themesData[themeKey];
+      if (d) {
+        document.getElementById('activeThemeBadge').textContent = 'Active: ' + d.name;
+        document.getElementById('themeHeroTitle').textContent = d.title;
+        document.getElementById('themeHeroDesc').textContent = d.desc;
+      }
+    }
+
+    function openDemoModal() {
+      alert('The Universal Modal System is active. Any chosen theme will automatically style all modals with its custom fonts, border-radius, and luxury backdrop blur.');
+    }
+  </script>
+</body>
+</html>
