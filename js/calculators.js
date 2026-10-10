@@ -73,22 +73,25 @@ function initDeflectionDiagnostic() {
     const proto = document.getElementById('diagProtocol');
 
     if (bow === 'over-2' || crack === 'corner-shear') {
-      badge.style.background = 'rgba(240,114,106,0.2)';
-      badge.style.color = '#f0726a';
+      badge.style.background = 'rgba(180, 35, 58, 0.15)';
+      badge.style.color = '#991b1b';
+      badge.style.fontWeight = '700';
       badge.innerText = 'CRITICAL SEVERITY • RISK OF SHEARING COLLAPSE';
       title.innerText = 'Emergency Foundation Stabilization Required';
       desc.innerText = 'Walls deflected over 2 inches have suffered structural mortar shear. The foundation is in danger of cave-in during the next heavy rainfall without immediate temporary shoring.';
       proto.innerText = 'Heavy Structural Steel I-Beam Soldiers anchored into floor joists & concrete slab floor, or complete foundation rebuild with helical tiebacks.';
     } else if (bow === '1-to-2') {
-      badge.style.background = 'rgba(242,180,90,0.2)';
-      badge.style.color = '#f59e0b';
+      badge.style.background = 'rgba(233, 136, 11, 0.18)';
+      badge.style.color = '#b45309';
+      badge.style.fontWeight = '700';
       badge.innerText = 'MODERATE TO HIGH RISK • ACTIVE DEFLECTION';
       title.innerText = 'Active Hydrostatic Soil Pressure';
       desc.innerText = 'Deflection between 1 and 2 inches confirms that lateral soil pressure exceeds masonry strength. The wall cannot self-correct and will worsen every wet season.';
       proto.innerText = 'Carbon Fiber Kevlar Straps bonded with structural epoxy, paired with exterior French drains to relieve hydrostatic groundwater pressure.';
     } else {
-      badge.style.background = 'rgba(95,211,154,0.2)';
-      badge.style.color = '#5fd39a';
+      badge.style.background = 'rgba(22, 163, 74, 0.15)';
+      badge.style.color = '#15803d';
+      badge.style.fontWeight = '700';
       badge.innerText = 'EARLY STAGE • PREVENTIVE ACTION';
       title.innerText = 'Early Foundation Settlement & Mortar Cracking';
       desc.innerText = 'Deflection under 1 inch is manageable. Preventive crack injection and exterior water diversion can arrest structural movement before expensive reinforcement is needed.';

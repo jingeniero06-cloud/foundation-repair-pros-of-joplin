@@ -6,8 +6,7 @@
   <title>31-Page Forensic SEO Crawl Database | Foundation Repair Pros of Joplin</title>
   <meta name="description" content="Searchable, filterable 31-page live crawl database and technical remediation matrix for foundationrepairprosofjoplin.com.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Jost:wght@400;500;600;700;800;900&display=swap">
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" type="image/png" href="https://foundationrepairprosofjoplin.com/wp-content/uploads/2022/09/Foundation-Repair-Pros-of-Joplin-Logo-1-150x143.png">
 </head>
@@ -192,7 +191,7 @@
   </section>
 
   <!-- Live 31-URL Crawl Database Section -->
-  <section class="section section-dark" id="crawlDatabaseSection">
+  <section class="section" id="crawlDatabaseSection">
     <div class="wrap">
       <div class="section-header">
         <span class="section-tag" style="color:var(--gold);">Live Crawler Explorer</span>
@@ -219,21 +218,21 @@
           <option value="time-desc">Sort: Slowest Response Time</option>
         </select>
 
-        <button id="resetFiltersBtn" class="btn btn-ghost btn-sm">Reset</button>
+        <button id="resetFiltersBtn" class="btn btn-outline-gold btn-sm">Reset</button>
       </div>
 
       <!-- Interactive Table Container -->
-      <div style="overflow-x:auto; background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:14px; padding:16px;">
-        <table style="width:100%; border-collapse:collapse; font-size:0.88rem; color:#cbd5e1;">
+      <div class="table-responsive" style="overflow-x:auto; background:#ffffff; border:1px solid rgba(19,43,52,0.18); border-radius:14px; box-shadow:var(--shadow-card); padding:4px;">
+        <table class="data-table" style="width:100%; border-collapse:collapse; font-size:0.88rem;">
           <thead>
-            <tr style="border-bottom:1px solid var(--line); text-align:left; color:var(--gold-2);">
-              <th style="padding:12px;">ID</th>
-              <th style="padding:12px;">Status</th>
-              <th style="padding:12px;">Page URL</th>
-              <th style="padding:12px;">Title Tag</th>
-              <th style="padding:12px;">Words</th>
-              <th style="padding:12px;">TTFB</th>
-              <th style="padding:12px;">Primary Defect Alert</th>
+            <tr style="text-align:left;">
+              <th style="padding:14px 12px;">ID</th>
+              <th style="padding:14px 12px;">Status</th>
+              <th style="padding:14px 12px;">Page URL</th>
+              <th style="padding:14px 12px;">Title Tag</th>
+              <th style="padding:14px 12px;">Words</th>
+              <th style="padding:14px 12px;">TTFB</th>
+              <th style="padding:14px 12px;">Primary Defect Alert</th>
             </tr>
           </thead>
           <tbody id="crawlTableBody">
@@ -242,9 +241,9 @@
         </table>
       </div>
 
-      <div style="margin-top:20px; display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; color:var(--muted-light);">
+      <div style="margin-top:20px; display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; color:var(--muted);">
         <span id="crawlRecordCount">Showing 31 of 31 URLs</span>
-        <a href="downloads.html" class="btn btn-outline-gold btn-sm">Download Raw JSON Corpus</a>
+        <a href="downloads.html" class="btn btn-gold btn-sm">Download Raw JSON Corpus</a>
       </div>
     </div>
   </section>

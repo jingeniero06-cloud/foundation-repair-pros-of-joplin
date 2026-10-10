@@ -1,50 +1,51 @@
 /* ==========================================================================
    Foundation Repair Pros of Joplin — Engineering & Property Intelligence Suite
-   Casual Modern Tech Theme (Approachable Neo-Tech & Friendly Modern SaaS)
+   SOP Machine Blueprint Design System (Industrial Blueprint & High-Precision Forensic)
    ========================================================================== */
 
 :root {
-  /* Casual Modern Tech Theme Palette */
-  --ink: #134e4a;               /* Deep Forest Ink */
-  --ink-2: #0f3d3a;             /* Deep Teal Slate */
-  --ink-3: #1a4945;             /* Elevated Teal Surface */
-  --paper: #f7f9f9;             /* Soft Mint-Gray Canvas */
-  --paper-2: #edf2f2;           /* Soft Surface Alt */
-  --paper-card: #ffffff;        /* Crisp White Card */
-  --text: #283e3c;              /* Deep Forest Teal Text */
-  --muted: #627b79;             /* Approachable Slate-Teal Muted */
-  --muted-light: #94a9a7;       /* Subtle Text on Ink */
+  /* SOP Machine Blueprint Design System */
+  --navy-deep: #0b1c22;
+  --ink: #0b1c22;               /* Deep Petroleum Navy */
+  --ink-2: #081a21;             /* Terminal Black/Navy */
+  --ink-3: #10262d;             /* Petroleum Surface */
+  --paper: #dfe4e5;             /* Blueprint Light Grid Canvas */
+  --paper-2: #f3f5f6;           /* Crisp Panel Background */
+  --paper-card: #ffffff;        /* Pure White High-Contrast Card */
+  --text: #1b1b1b;              /* Stark Pitch Charcoal Ink (100% Legibility) */
+  --muted: #5b6a70;             /* Cool Technical Graphite */
+  --muted-light: #9fb0b4;       /* Text on Deep Petroleum */
   
-  /* Brand Casual Neo-Tech Accents */
-  --gold: #0d9488;              /* Friendly Emerald Teal (Primary Accent) */
-  --gold-2: #14b8a6;            /* Vibrant Light Teal Highlight */
-  --bmg-blue: #0284c7;          /* Sky Blue Accent */
-  --bmg-navy: #134e4a;          /* Forest Ink */
-  --teal: #0d9488;              /* Signal Emerald Teal */
-  --green: #10b981;             /* Success Mint Green */
-  --amber: #f97316;             /* Warm Tangerine Coral (Alert/Warning) */
-  --red: #ef4444;               /* Critical Coral Red */
+  /* High-Visibility Signal Accents */
+  --gold: #e9880b;              /* Safety Hazard Amber (Primary Accent) */
+  --gold-2: #f59e0b;            /* Bright Amber Shimmer */
+  --bmg-blue: #2f67f6;          /* Engineering Cobalt */
+  --bmg-navy: #0b1c22;          /* Petroleum Deep */
+  --teal: #0f766e;              /* Signal KV Teal */
+  --green: #16a34a;             /* Success Green */
+  --amber: #e9880b;             /* Safety Amber */
+  --red: #b4233a;               /* Alert Red */
   
-  /* Structural Hairlines & Insets */
+  /* Structural Hairlines */
   --line: rgba(255, 255, 255, 0.12);
   --line-strong: rgba(255, 255, 255, 0.22);
-  --line-dark: #d5e0df;         /* Soft Mint-Gray Border */
-  --line-dark-hover: #bccac9;   /* Hover Border */
+  --line-dark: rgba(19, 43, 52, 0.18);
+  --line-dark-hover: rgba(19, 43, 52, 0.35);
   
-  /* Soft Modern Radii & Elevation */
-  --radius-sm: 8px;
-  --radius: 16px;
-  --radius-lg: 24px;
+  /* Precision Radii & Elevation */
+  --radius-sm: 6px;
+  --radius: 14px;
+  --radius-lg: 18px;
   --radius-pill: 9999px;
-  --shadow: 0 25px 60px -20px rgba(13, 148, 136, 0.16);
-  --shadow-card: 0 10px 25px -5px rgba(13, 148, 136, 0.07), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
-  --shadow-hover: 0 20px 40px -15px rgba(13, 148, 136, 0.18);
+  --shadow: 0 20px 55px rgba(12, 30, 36, 0.16);
+  --shadow-card: 0 4px 18px rgba(12, 30, 36, 0.06);
+  --shadow-hover: 0 12px 30px rgba(12, 30, 36, 0.14);
   
-  /* Typography: Friendly, geometric, highly legible Plus Jakarta Sans */
-  --serif: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --max: 1200px;
+  /* Typography: Jost (Architectural Geometric) & IBM Plex Mono */
+  --serif: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --sans: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --max: 1280px;
 }
 
 *, *::before, *::after {
@@ -61,10 +62,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--sans);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 15.5px;
+  line-height: 1.6;
   color: var(--text);
-  background: var(--paper);
+  background-color: #dfe4e5;
+  background-image:
+    linear-gradient(rgba(19, 43, 52, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(19, 43, 52, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -108,14 +113,15 @@ p {
    TOP ANNOUNCEMENT BAR
    ========================================================================== */
 .top-strip {
-  background: var(--ink-2);
-  color: var(--muted-light);
-  font-size: 0.8125rem;
+  background: #081a21;
+  color: #9fb0b4;
+  font-family: var(--mono);
+  font-size: 0.8rem;
   min-height: 40px;
   padding: 0 24px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .top-strip-inner {
   width: 100%;
@@ -136,9 +142,10 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(13, 148, 136, 0.2);
-  color: var(--gold-2);
-  border: 1px solid rgba(20, 184, 166, 0.35);
+  background: rgba(233, 136, 11, 0.18);
+  color: var(--gold);
+  border: 1px solid rgba(233, 136, 11, 0.4);
+  font-family: var(--mono);
   font-size: 0.68rem;
   font-weight: 700;
   height: 22px;
@@ -160,28 +167,28 @@ p {
   align-items: center;
   gap: 5px;
   color: #cbd5e1;
-  font-size: 0.8125rem;
+  font-size: 0.8rem;
   font-weight: 500;
   line-height: 1;
   white-space: nowrap;
   transition: color 0.2s ease;
 }
 .top-strip-right a:hover {
-  color: var(--gold-2);
+  color: var(--gold);
 }
 
 /* ==========================================================================
    SITE HEADER & NAVIGATION
    ========================================================================== */
 .site-header {
-  background: rgba(15, 61, 58, 0.96);
+  background: rgba(11, 28, 34, 0.98);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(15, 61, 58, 0.25);
+  box-shadow: 0 4px 24px rgba(11, 28, 34, 0.4);
 }
 .nav {
   display: flex;
@@ -276,10 +283,9 @@ p {
   background: rgba(255, 255, 255, 0.08);
 }
 .nav-links a.active:not(.btn) {
-  color: var(--gold-2) !important;
-  background: rgba(13, 148, 136, 0.18) !important;
-  border: 1px solid rgba(20, 184, 166, 0.35) !important;
-  color: #ffffff !important;
+  color: var(--gold) !important;
+  background: rgba(233, 136, 11, 0.15) !important;
+  border: 1px solid rgba(233, 136, 11, 0.4) !important;
   font-weight: 600;
 }
 
@@ -287,29 +293,30 @@ p {
 .nav-links .btn-gold,
 .nav-links a.btn-gold,
 .nav-links a.btn {
-  background: linear-gradient(135deg, var(--gold-2) 0%, var(--gold) 100%) !important;
-  color: #ffffff !important;
-  font-weight: 700 !important;
+  background: var(--gold) !important;
+  color: #0b1c22 !important;
+  font-weight: 800 !important;
   font-size: 0.86rem !important;
   height: 38px !important;
   padding: 0 18px !important;
   border-radius: 999px !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  box-shadow: 0 4px 16px -2px rgba(13, 148, 136, 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 16px -2px rgba(233, 136, 11, 0.45) !important;
   margin-left: 8px;
   white-space: nowrap !important;
   line-height: 1 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  text-decoration: none;
 }
 .nav-links .btn-gold:hover,
 .nav-links a.btn-gold:hover,
 .nav-links a.btn:hover {
-  background: linear-gradient(135deg, #2dd4bf 0%, #0f766e 100%) !important;
-  color: #ffffff !important;
+  background: #f59e0b !important;
+  color: #0b1c22 !important;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px -2px rgba(13, 148, 136, 0.75) !important;
+  box-shadow: 0 6px 20px -2px rgba(233, 136, 11, 0.65) !important;
 }
 
 /* Luxury Buttons */
@@ -333,16 +340,16 @@ p {
   transform: translateY(-2px);
 }
 .btn-gold {
-  background: linear-gradient(135deg, var(--gold-2) 0%, var(--gold) 100%);
-  color: #ffffff !important;
-  box-shadow: 0 10px 24px -8px rgba(13, 148, 136, 0.55);
+  background: var(--gold);
+  color: #0b1c22 !important;
+  box-shadow: 0 6px 20px -4px rgba(233, 136, 11, 0.45);
   border-color: rgba(255,255,255,0.25);
-  font-weight: 700;
+  font-weight: 800;
 }
 .btn-gold:hover {
-  background: linear-gradient(135deg, #2dd4bf 0%, #0f766e 100%);
-  color: #ffffff !important;
-  box-shadow: 0 14px 28px -6px rgba(13, 148, 136, 0.75);
+  background: #f59e0b;
+  color: #0b1c22 !important;
+  box-shadow: 0 10px 24px -4px rgba(233, 136, 11, 0.65);
 }
 .btn-ghost {
   border-color: rgba(255, 255, 255, 0.25);
@@ -369,7 +376,7 @@ p {
   background: transparent;
 }
 .btn-outline-gold:hover {
-  background: rgba(201, 163, 91, 0.12);
+  background: rgba(233, 136, 11, 0.15);
   color: var(--gold-2);
 }
 .btn-sm {
@@ -394,15 +401,13 @@ p {
 }
 
 /* ==========================================================================
-   HERO SECTION (CASUAL MODERN TECH WITH LIVE REPORT GAUGE)
+   HERO SECTION (SOP MACHINE BLUEPRINT PALETTE)
    ========================================================================== */
 .hero {
-  background: radial-gradient(circle at 85% 20%, rgba(13, 148, 136, 0.22) 0%, transparent 60%),
-              radial-gradient(circle at 15% 90%, rgba(249, 115, 22, 0.12) 0%, transparent 50%),
-              var(--ink);
+  background: #081a21;
   color: #ffffff;
   padding: 80px 0 90px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(19, 43, 52, 0.25);
   position: relative;
   overflow: hidden;
 }
@@ -417,22 +422,23 @@ p {
   align-items: center;
   gap: 8px;
   font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 700;
-  color: #a7f3d0;
-  background: rgba(13, 148, 136, 0.15);
+  font-weight: 800;
+  color: var(--gold);
+  background: rgba(233, 136, 11, 0.12);
   padding: 6px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(20, 184, 166, 0.35);
+  border: 1px solid rgba(233, 136, 11, 0.35);
+  font-family: var(--mono);
   margin-bottom: 22px;
 }
 .eyebrow .dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
 }
 .hero h1 {
   color: #ffffff;
@@ -441,7 +447,12 @@ p {
 .hero h1 em {
   font-style: normal;
   font-weight: 700;
-  color: #2dd4bf;
+  color: var(--gold);
+}
+.hero .lead {
+  font-size: 1.15rem;
+  color: #c5d3d6;
+  line-height: 1.65;
 }
 .hero .lead {
   font-size: 1.15rem;
@@ -680,7 +691,7 @@ p {
   color: #ffffff;
 }
 .card-dark:hover {
-  border-color: rgba(201, 163, 91, 0.35);
+  border-color: rgba(233, 136, 11, 0.4);
 }
 .card-dark h3, .card-dark h4 {
   color: #ffffff;
@@ -816,7 +827,7 @@ p {
 .search-input:focus {
   outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(201, 163, 91, 0.15);
+  box-shadow: 0 0 0 3px rgba(233, 136, 11, 0.2);
 }
 .search-icon {
   position: absolute;
@@ -874,37 +885,53 @@ p {
   overflow-x: auto;
   border: 1px solid var(--line-dark);
   border-radius: var(--radius);
-  background: #ffffff;
+  background: #ffffff !important;
   box-shadow: var(--shadow-card);
 }
-table.data-table {
+table, table.data-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
   text-align: left;
+  background: #ffffff !important;
+  color: #1b1b1b !important;
 }
-table.data-table th {
-  background: #fbf9f5;
-  color: var(--ink);
-  font-family: var(--sans);
+table th, table.data-table th {
+  background: #f3f5f6 !important;
+  color: #5b6a70 !important;
+  font-family: var(--mono);
   font-weight: 700;
-  font-size: 0.82rem;
-  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 16px 18px;
-  border-bottom: 1px solid var(--line-dark);
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(19, 43, 52, 0.15) !important;
   white-space: nowrap;
 }
-table.data-table td {
+table td, table.data-table td {
   padding: 14px 18px;
-  border-bottom: 1px solid var(--line-dark);
+  border-bottom: 1px solid rgba(19, 43, 52, 0.08) !important;
   vertical-align: middle;
+  color: #1b1b1b !important;
+  background: #ffffff !important;
 }
-table.data-table tr:hover td {
-  background: #fbf9f5;
+table tr:hover td, table.data-table tr:hover td {
+  background: #f8fafc !important;
 }
-table.data-table tr:last-child td {
+table tr:last-child td, table.data-table tr:last-child td {
   border-bottom: none;
+}
+table td a {
+  color: #0b1c22 !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+table td a:hover {
+  color: #2f67f6 !important;
+  text-decoration: underline;
+}
+table td strong {
+  color: #1b1b1b !important;
 }
 
 /* ==========================================================================

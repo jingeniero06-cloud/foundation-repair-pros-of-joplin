@@ -7,7 +7,7 @@
   <meta name="description" content="Interactive geotechnical engineering calculators for Joplin, MO: Underpinning Pier Count & Depth Estimator plus Basement Wall Deflection Risk Diagnostic.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Jost:wght@400;500;600;700;800;900&display=swap">
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" type="image/png" href="https://foundationrepairprosofjoplin.com/wp-content/uploads/2022/09/Foundation-Repair-Pros-of-Joplin-Logo-1-150x143.png">
   <style>
@@ -252,20 +252,20 @@
   </section>
 
   <!-- CALCULATOR 2: WALL DEFLECTION DIAGNOSTIC -->
-  <section class="section section-dark" id="deflectionCalcSection">
+  <section class="section" id="deflectionCalcSection">
     <div class="wrap">
       <div class="section-header">
-        <span class="section-tag" style="color:var(--gold);">Interactive Tool 2</span>
+        <span class="section-tag">Interactive Tool 2</span>
         <h2>Basement Hydrostatic Wall Deflection & Crack Diagnostic</h2>
         <p class="section-desc">Assess the structural urgency of bowing basement walls and stair-step cracks.</p>
       </div>
 
-      <div class="card calc-container" style="background:var(--ink-2); border-color:var(--line);">
+      <div class="card calc-container" style="background:#ffffff; border:1px solid var(--line-dark);">
         <div>
-          <h3 style="font-size:1.25rem; margin-bottom:18px; color:#ffffff;">Wall Inspection Symptoms</h3>
+          <h3 style="font-size:1.25rem; margin-bottom:18px; color:var(--ink);">Wall Inspection Symptoms</h3>
 
           <div class="form-group">
-            <label class="form-label" style="color:var(--muted-light);">Measured Inward Bow / Bulge (Inches)</label>
+            <label class="form-label">Measured Inward Bow / Bulge (Inches)</label>
             <select id="calcBowInches" class="form-control">
               <option value="under-1">Less than 1.0 inch (Early Stage)</option>
               <option value="1-to-2" selected>1.0 to 2.0 inches (Active Structural Failure)</option>
@@ -274,7 +274,7 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label" style="color:var(--muted-light);">Observed Crack Pattern</label>
+            <label class="form-label">Observed Crack Pattern</label>
             <select id="calcCrackPattern" class="form-control">
               <option value="horizontal" selected>Horizontal crack along mid-height mortar line</option>
               <option value="stair-step">Diagonal stair-step cracks near corners</option>
@@ -284,7 +284,7 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label" style="color:var(--muted-light);">Water Intrusion Severity</label>
+            <label class="form-label">Water Intrusion Severity</label>
             <select id="calcWaterLevel" class="form-control">
               <option value="dry">Dry (White powdery efflorescence only)</option>
               <option value="damp" selected>Damp walls / Musty crawl space odor</option>
@@ -295,17 +295,17 @@
           <button id="runDeflectionCalc" class="btn btn-gold" style="width:100%; margin-top:10px;">Run Deflection Diagnostic</button>
         </div>
 
-        <div style="background:rgba(255,255,255,0.04); padding:28px; border-radius:14px; border:1px solid var(--line);">
-          <span id="diagRiskBadge" class="badge" style="background:rgba(242,180,90,0.2); color:var(--amber); margin-bottom:14px; display:inline-block;">MODERATE RISK • STABILIZATION REQUIRED</span>
-          <h3 id="diagRiskTitle" style="font-size:1.3rem; margin-bottom:14px; color:#ffffff;">Active Lateral Soil Pressure</h3>
+        <div style="background:var(--paper-2); padding:28px; border-radius:14px; border:1px solid var(--line-dark);">
+          <span id="diagRiskBadge" class="badge" style="background:rgba(233,136,11,0.18); color:#b45309; font-weight:700; margin-bottom:14px; display:inline-block;">MODERATE RISK • STABILIZATION REQUIRED</span>
+          <h3 id="diagRiskTitle" style="font-size:1.3rem; margin-bottom:14px; color:var(--ink);">Active Lateral Soil Pressure</h3>
 
-          <p id="diagRiskDesc" style="font-size:0.9rem; color:var(--muted-light); line-height:1.6; margin-bottom:18px;">
+          <p id="diagRiskDesc" style="font-size:0.9rem; color:var(--muted); line-height:1.6; margin-bottom:18px;">
             Inward deflection between 1 and 2 inches indicates that external soil and hydrostatic pressure has overcome the tensile strength of the mortar joints. Wall cannot self-correct and will continue to displace.
           </p>
 
-          <div style="border-top:1px solid var(--line); padding-top:14px; margin-bottom:14px;">
-            <strong style="color:var(--gold-2); font-size:0.85rem; text-transform:uppercase;">Recommended Repair Protocol:</strong>
-            <p id="diagProtocol" style="color:#ffffff; font-size:0.95rem; margin-top:4px;">
+          <div style="border-top:1px solid var(--line-dark); padding-top:14px; margin-bottom:14px;">
+            <strong style="color:var(--gold); font-size:0.85rem; text-transform:uppercase; font-family:var(--mono);">Recommended Repair Protocol:</strong>
+            <p id="diagProtocol" style="color:var(--ink); font-size:0.95rem; margin-top:4px; font-weight:600;">
               Carbon Fiber Structural Straps or Carbon Fiber Grid System bonded with high-tensile epoxy to halt inward bowing permanently.
             </p>
           </div>
