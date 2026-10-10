@@ -72,3 +72,15 @@
 - Every client inquiry receives a deterministic forensic crawl, actionable data matrix, custom engineering/compliance calculators, and interactive link CRM.
 - Projects are scaffolded into `projects/<client-slug>` using `scaffold-new-client.py` and tracked in `projects/PROJECTS_REGISTRY.md`.
 - Automated deployment to GitHub Pages via GitHub Actions provides instant live client links.
+
+---
+
+## 6. Permanent Layout, Modal & CSS Architecture Standard
+- **Dual-Selector Modal System:** All modals must be styled under BOTH `.modal-overlay, .modal` and `.modal-window, .modal-dialog` in `css/main.css`.
+  - Hidden by default: `position: fixed !important; inset: 0 !important; width: 100vw !important; height: 100vh !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; z-index: 99999 !important;`
+  - Active state: `.modal-overlay.active, .modal-overlay.show, .modal.active, .modal.show { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }`
+  - Window styling: `transform: translateY(24px) scale(0.97)` animating to `transform: translateY(0) scale(1)` with luxury backdrop blur (`backdrop-filter: blur(8px)`).
+- **Universal Modal JS Delegation:** In `js/app.js`, universal handlers manage `[data-open-lead-modal]`, `[data-open-modal]`, `.modal-close`, `[data-close-modal]`, backdrop clicks, and `Escape` key listeners with body scroll locking.
+- **Zero Orphaned Markup:** Never leave dangling `</form></div></div>` fragments in HTML.
+- **Automated Scaffolding Guard:** `scaffold-new-client.py` automatically executes a DOM tag parser check to guarantee 100% tag integrity and modal health before any project is finalized.
+
