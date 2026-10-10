@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joplin Foundation Pier Depth & Hydrostatic Pressure Calculators | Foundation Repair Pros</title>
+  <meta name="description" content="Interactive geotechnical engineering calculators for Joplin, MO: Underpinning Pier Count & Depth Estimator plus Basement Wall Deflection Risk Diagnostic.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="https://foundationrepairprosofjoplin.com/wp-content/uploads/2022/09/Foundation-Repair-Pros-of-Joplin-Logo-1-150x143.png">
+  <style>
+    .calc-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: flex-start;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-control {
+      width: 100%;
+      padding: 11px 16px;
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text);
+      transition: all 0.2s ease;
+      background: #ffffff;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 163, 91, 0.15);
+    }
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--line-dark);
+      font-size: 0.95rem;
+    }
+    .result-row:last-child {
+      border-bottom: none;
+    }
+    .result-value {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: right;
+    }
+    @media (max-width: 900px) {
+      .calc-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-strip" aria-label="Official Intelligence Announcement">
+    <div class="top-strip-inner">
+      <div class="top-strip-left">
+        <span class="top-strip-badge">GEOTECHNICAL TOOLS</span>
+        <span>Joplin Underpinning & Hydrostatic Pressure Diagnostic Engineering</span>
+      </div>
+      <div class="top-strip-right">
+        <a href="blog.html">📖 Read Joplin Geotechnical Guide</a>
+        <a href="index.html">← Back to Overview</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Site Header -->
+  <header class="site-header" id="top">
+    <div class="wrap nav">
+      <a class="logo" href="index.html" aria-label="Foundation Repair Pros of Joplin Home">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="1" y="1" width="30" height="30" rx="9" stroke="#c9a35b" stroke-width="1.5"/>
+          <path d="M16 6v20M10 12l6-6 6 6M8 26h16M11 20h10" stroke="#e3c48a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <span>Foundation Repair Pros</span>
+          <span class="sub">OF JOPLIN, MO • FORENSIC INTELLIGENCE</span>
+        </div>
+      </a>
+
+      <button class="menu-btn" aria-label="Open navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="audit.html">Audit</a></li>
+        <li><a href="backlinks.html">Backlinks</a></li>
+        <li><a href="blog.html">Field Guide</a></li>
+        <li><a href="calculators.html" class="active">Calculators</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a class="btn btn-gold btn-sm" href="#" data-open-lead-modal>Schedule Inspection</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">
+          <span class="dot"></span> Real-Time Geotechnical Math • Calibrated for Ozark Limestone
+        </span>
+        <h1>Interactive foundation piering & <em>structural diagnostics</em>.</h1>
+        <p class="lead">
+          Calculate estimated steel push/helical pier requirements, bed-depth expectations, and basement hydrostatic wall deflection severity before hiring a contractor.
+        </p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-gold" href="#pierCalcSection">
+            Pier Depth Estimator
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#deflectionCalcSection">
+            Wall Deflection Diagnostic
+          </a>
+        </div>
+
+        <div class="hero-proof">
+          <div><b>100%</b>Free to use</div>
+          <div><b>IBC</b>Compliant formulas</div>
+          <div><b>City of Joplin</b>Permit guidelines</div>
+          <div><b>0</b>Obligation estimate</div>
+        </div>
+      </div>
+
+      <div class="card card-dark" style="padding:30px;">
+        <span class="badge badge-pass" style="margin-bottom:12px; display:inline-block;">Engineering Precision</span>
+        <h3 style="color:#ffffff; font-size:1.4rem; margin-bottom:12px;">Why Generic Calculators Fail in Joplin</h3>
+        <p style="color:var(--muted-light); font-size:0.9rem; line-height:1.6; margin-bottom:18px;">
+          National foundation calculators assume uniform sandy or loam soils. Joplin's subsurface consists of dense chert rock fragments and fractured Mississippian limestone, requiring specific hydraulic load calibrations.
+        </p>
+        <div style="background:rgba(255,255,255,0.06); padding:12px 16px; border-radius:8px; font-size:0.84rem; color:#cbd5e1;">
+          ✓ Fully calibrated for Jasper County (Joplin, Carthage, Webb City) & Newton County (Neosho).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR 1: PIER DEPTH & UNDERPINNING ESTIMATOR -->
+  <section class="section" id="pierCalcSection">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-tag">Interactive Tool 1</span>
+        <h2>Joplin Foundation Pier Depth & Underpinning Estimator</h2>
+        <p class="section-desc">Estimate pier count, depth to Ozark bedrock, and price ranges based on linear footage and structure type.</p>
+      </div>
+
+      <div class="card calc-container">
+        <!-- Input Form -->
+        <div>
+          <h3 style="font-size:1.25rem; margin-bottom:18px; color:var(--ink);">Project Parameters</h3>
+          
+          <div class="form-group">
+            <label class="form-label">Settling Wall Length (Linear Feet)</label>
+            <input type="number" id="calcWallLength" class="form-control" value="35" min="10" max="150" step="5">
+            <small style="color:var(--muted); font-size:0.78rem;">Typical residential settling wall is 25 to 50 linear feet.</small>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Structure Type & Weight Load</label>
+            <select id="calcStructureType" class="form-control">
+              <option value="single-frame">1-Story Wood Frame Home</option>
+              <option value="two-story-frame">2-Story Wood Frame Home</option>
+              <option value="brick-veneer" selected>1-2 Story Brick Veneer / Carthage Stone</option>
+              <option value="commercial-masonry">Commercial Masonry / Heavy Block</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Geological Zone (Location)</label>
+            <select id="calcSoilZone" class="form-control">
+              <option value="joplin-central" selected>Joplin Central / Turkey Creek (Avg 20-25 ft to bedrock)</option>
+              <option value="shoal-creek">Shoal Creek / Loma Linda (Avg 15-22 ft to bedrock)</option>
+              <option value="carthage-limestone">Carthage Limestone Ridge (Avg 12-18 ft to bedrock)</option>
+              <option value="webb-city-mining">Webb City / Mining District (Avg 24-35 ft deep fill)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Recommended Pier System</label>
+            <select id="calcPierType" class="form-control">
+              <option value="push-pier" selected>Heavy Hydraulic Steel Push Piers (Driven to Bedrock)</option>
+              <option value="helical-pier">Torque Helical Piers (Rotary Anchor System)</option>
+            </select>
+          </div>
+
+          <button id="runPierCalc" class="btn btn-gold" style="width:100%; margin-top:10px;">Calculate Pier Requirements</button>
+        </div>
+
+        <!-- Real-Time Results Card -->
+        <div style="background:var(--paper-2); padding:28px; border-radius:14px; border:1px solid var(--line-dark);">
+          <span class="badge badge-pass" style="margin-bottom:14px; display:inline-block;">Engineering Calculation</span>
+          <h3 style="font-size:1.3rem; margin-bottom:16px; color:var(--ink);">Estimated Underpinning Profile</h3>
+
+          <div class="result-row">
+            <span>Recommended Pier Count:</span>
+            <span class="result-value" id="resPierCount">6 Piers</span>
+          </div>
+
+          <div class="result-row">
+            <span>Pier Spacing Standard:</span>
+            <span class="result-value" style="font-size:1rem;">Every 6.0 Linear Feet</span>
+          </div>
+
+          <div class="result-row">
+            <span>Estimated Depth to Bedrock:</span>
+            <span class="result-value" id="resDepthRange">20 – 25 Feet</span>
+          </div>
+
+          <div class="result-row">
+            <span>Total Steel Underpinning Footage:</span>
+            <span class="result-value" id="resTotalSteel">135 Linear Feet</span>
+          </div>
+
+          <div class="result-row">
+            <span>Load Capacity Per Pier:</span>
+            <span class="result-value" style="font-size:1rem; color:var(--green);">45,000 lbs (Verified)</span>
+          </div>
+
+          <div class="result-row" style="background:rgba(201,163,91,0.12); padding:12px; border-radius:8px; border:none; margin-top:10px;">
+            <span style="font-weight:700; color:var(--ink);">Estimated Project Investment:</span>
+            <span class="result-value" id="resPriceRange" style="color:var(--ink);">$10,800 – $14,400</span>
+          </div>
+
+          <div style="margin-top:18px; font-size:0.8rem; color:var(--muted); line-height:1.5;">
+            * Includes structural brackets, hydraulic drive labor, laser leveling, and City of Joplin permit filing. Subject to on-site laser elevation audit.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR 2: WALL DEFLECTION DIAGNOSTIC -->
+  <section class="section section-dark" id="deflectionCalcSection">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-tag" style="color:var(--gold);">Interactive Tool 2</span>
+        <h2>Basement Hydrostatic Wall Deflection & Crack Diagnostic</h2>
+        <p class="section-desc">Assess the structural urgency of bowing basement walls and stair-step cracks.</p>
+      </div>
+
+      <div class="card calc-container" style="background:var(--ink-2); border-color:var(--line);">
+        <div>
+          <h3 style="font-size:1.25rem; margin-bottom:18px; color:#ffffff;">Wall Inspection Symptoms</h3>
+
+          <div class="form-group">
+            <label class="form-label" style="color:var(--muted-light);">Measured Inward Bow / Bulge (Inches)</label>
+            <select id="calcBowInches" class="form-control">
+              <option value="under-1">Less than 1.0 inch (Early Stage)</option>
+              <option value="1-to-2" selected>1.0 to 2.0 inches (Active Structural Failure)</option>
+              <option value="over-2">Greater than 2.0 inches (Critical Shearing Risk)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" style="color:var(--muted-light);">Observed Crack Pattern</label>
+            <select id="calcCrackPattern" class="form-control">
+              <option value="horizontal" selected>Horizontal crack along mid-height mortar line</option>
+              <option value="stair-step">Diagonal stair-step cracks near corners</option>
+              <option value="vertical">Vertical hairline cracks</option>
+              <option value="corner-shear">Corner wall separation / tipping inward at top</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" style="color:var(--muted-light);">Water Intrusion Severity</label>
+            <select id="calcWaterLevel" class="form-control">
+              <option value="dry">Dry (White powdery efflorescence only)</option>
+              <option value="damp" selected>Damp walls / Musty crawl space odor</option>
+              <option value="active-leak">Active water trickling during heavy Ozark rain</option>
+            </select>
+          </div>
+
+          <button id="runDeflectionCalc" class="btn btn-gold" style="width:100%; margin-top:10px;">Run Deflection Diagnostic</button>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.04); padding:28px; border-radius:14px; border:1px solid var(--line);">
+          <span id="diagRiskBadge" class="badge" style="background:rgba(242,180,90,0.2); color:var(--amber); margin-bottom:14px; display:inline-block;">MODERATE RISK • STABILIZATION REQUIRED</span>
+          <h3 id="diagRiskTitle" style="font-size:1.3rem; margin-bottom:14px; color:#ffffff;">Active Lateral Soil Pressure</h3>
+
+          <p id="diagRiskDesc" style="font-size:0.9rem; color:var(--muted-light); line-height:1.6; margin-bottom:18px;">
+            Inward deflection between 1 and 2 inches indicates that external soil and hydrostatic pressure has overcome the tensile strength of the mortar joints. Wall cannot self-correct and will continue to displace.
+          </p>
+
+          <div style="border-top:1px solid var(--line); padding-top:14px; margin-bottom:14px;">
+            <strong style="color:var(--gold-2); font-size:0.85rem; text-transform:uppercase;">Recommended Repair Protocol:</strong>
+            <p id="diagProtocol" style="color:#ffffff; font-size:0.95rem; margin-top:4px;">
+              Carbon Fiber Structural Straps or Carbon Fiber Grid System bonded with high-tensile epoxy to halt inward bowing permanently.
+            </p>
+          </div>
+
+          <button class="btn btn-gold btn-sm" style="width:100%;" data-open-lead-modal>Schedule On-Site Laser Assessment</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Modal -->
+  <div class="modal" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Schedule Free Joplin Foundation Inspection</h3>
+        <button class="modal-close" id="closeLeadModal" aria-label="Close modal">&times;</button>
+      </div>
+      <form id="leadCaptureForm">
+        <div class="modal-body">
+          <div style="margin-bottom:14px;">
+            <label style="display:block; font-size:0.82rem; font-weight:700; color:var(--ink); margin-bottom:4px;">Homeowner Name *</label>
+            <input type="text" id="leadName" required placeholder="John Smith" class="search-input" style="padding-left:14px;">
+          </div>
+          <div style="margin-bottom:14px;">
+            <label style="display:block; font-size:0.82rem; font-weight:700; color:var(--ink); margin-bottom:4px;">Phone Number *</label>
+            <input type="tel" id="leadPhone" required placeholder="(417) 555-0192" class="search-input" style="padding-left:14px;">
+          </div>
+          <div style="margin-bottom:14px;">
+            <label style="display:block; font-size:0.82rem; font-weight:700; color:var(--ink); margin-bottom:4px;">Property Address & City *</label>
+            <input type="text" id="leadAddress" required placeholder="e.g. 1502 S Main St, Joplin, MO" class="search-input" style="padding-left:14px;">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-gold" style="width:100%;">Request Free Structural Evaluation</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-msg" id="bmgToast"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Foundation Repair Pros of Joplin</h3>
+          <p>Engineered Foundation Diagnostics & Underpinning for Joplin, Carthage, Webb City, and Neosho.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="audit.html">Audit</a></li>
+            <li><a href="backlinks.html">Backlinks CRM</a></li>
+            <li><a href="blog.html">Field Guide</a></li>
+            <li><a href="calculators.html">Calculators</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Foundation Repair Pros of Joplin. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/calculators.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
