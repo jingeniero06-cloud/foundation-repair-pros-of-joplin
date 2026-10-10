@@ -10,9 +10,11 @@
 
 ---
 
-## 🌐 Live Application URL
+## 🌐 Live Application URLs
 
-- **Production GitHub Pages:** [https://jingeniero06-cloud.github.io/foundation-repair-pros-of-joplin/](https://jingeniero06-cloud.github.io/foundation-repair-pros-of-joplin/)
+- **Production Portal (Northline Theme):** [https://jingeniero06-cloud.github.io/foundation-repair-pros-of-joplin/](https://jingeniero06-cloud.github.io/foundation-repair-pros-of-joplin/)
+- **⚡ SOP Machine Blueprint View (Cloudflare Dev SOP Aesthetic):** [https://jingeniero06-cloud.github.io/foundation-repair-pros-of-joplin/sop-blueprint.html](https://jingeniero06-cloud.github.io/foundation-repair-pros-of-joplin/sop-blueprint.html)
+- **🎨 Interactive Theme Studio (5-Theme Switcher):** [https://jingeniero06-cloud.github.io/foundation-repair-pros-of-joplin/theme-studio.html](https://jingeniero06-cloud.github.io/foundation-repair-pros-of-joplin/theme-studio.html)
 
 ---
 
