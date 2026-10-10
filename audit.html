@@ -249,41 +249,63 @@
     </div>
   </section>
 
-  <!-- Lead Modal -->
-  <div class="modal" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-dialog">
+  <!-- Page Detail Inspection Modal -->
+  <div class="modal-overlay modal" id="pageDetailModal" role="dialog" aria-modal="true" aria-labelledby="pageDetailTitle">
+    <div class="modal-window modal-dialog" style="max-width:760px;">
       <div class="modal-header">
-        <h3 class="modal-title" id="modalTitle">Schedule Free Joplin Foundation Inspection</h3>
+        <h3 class="modal-title" id="pageDetailTitle">Technical Page Forensics</h3>
+        <button class="modal-close" id="closePageDetailModal" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="pageDetailBody">
+        <!-- Dynamically populated by js/audit.js -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-dark btn-sm" onclick="closeModal(document.getElementById('pageDetailModal'))">Close Forensics</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certified Inspection Lead Modal -->
+  <div class="modal-overlay modal" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    <div class="modal-window modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="leadModalTitle">Schedule Certified Foundation Inspection</h3>
         <button class="modal-close" id="closeLeadModal" aria-label="Close modal">&times;</button>
       </div>
       <form id="leadCaptureForm">
         <div class="modal-body">
-          <p style="color:var(--muted); font-size:0.88rem; margin-bottom:16px;">
-            Request a certified structural evaluation for your home or commercial building in Joplin, MO.
+          <p style="color:var(--muted); font-size:0.92rem; margin-bottom:20px; line-height:1.5;">
+            Request a certified on-site structural evaluation in Joplin, Carthage, Webb City, Neosho, or surrounding Four-States communities.
           </p>
-          <div style="margin-bottom:14px;">
-            <label style="display:block; font-size:0.82rem; font-weight:700; color:var(--ink); margin-bottom:4px;">Homeowner Name *</label>
-            <input type="text" id="leadName" required placeholder="John Smith" class="search-input" style="padding-left:14px;">
+          <div style="margin-bottom:16px;">
+            <label for="leadName" style="display:block; font-size:0.82rem; font-weight:700; color:var(--ink); margin-bottom:6px; text-transform:uppercase;">Homeowner Name *</label>
+            <input type="text" id="leadName" required placeholder="e.g. John Smith" class="search-input" style="padding-left:14px;">
           </div>
-          <div style="margin-bottom:14px;">
-            <label style="display:block; font-size:0.82rem; font-weight:700; color:var(--ink); margin-bottom:4px;">Phone Number *</label>
+          <div style="margin-bottom:16px;">
+            <label for="leadPhone" style="display:block; font-size:0.82rem; font-weight:700; color:var(--ink); margin-bottom:6px; text-transform:uppercase;">Phone Number *</label>
             <input type="tel" id="leadPhone" required placeholder="(417) 555-0192" class="search-input" style="padding-left:14px;">
           </div>
-          <div style="margin-bottom:14px;">
-            <label style="display:block; font-size:0.82rem; font-weight:700; color:var(--ink); margin-bottom:4px;">Property Address & City *</label>
+          <div style="margin-bottom:16px;">
+            <label for="leadEmail" style="display:block; font-size:0.82rem; font-weight:700; color:var(--ink); margin-bottom:6px; text-transform:uppercase;">Email Address *</label>
+            <input type="email" id="leadEmail" required placeholder="john@example.com" class="search-input" style="padding-left:14px;">
+          </div>
+          <div style="margin-bottom:20px;">
+            <label for="leadAddress" style="display:block; font-size:0.82rem; font-weight:700; color:var(--ink); margin-bottom:6px; text-transform:uppercase;">Property Address & City *</label>
             <input type="text" id="leadAddress" required placeholder="e.g. 1502 S Main St, Joplin, MO" class="search-input" style="padding-left:14px;">
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-gold" style="width:100%;">Request Free Structural Evaluation</button>
+          <button type="submit" class="btn btn-gold" style="width:100%;">
+            Send Free Inspection Request
+          </button>
         </div>
       </form>
     </div>
   </div>
 
+  <!-- Toast Notification Container -->
   <div class="toast-msg" id="bmgToast"></div>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">

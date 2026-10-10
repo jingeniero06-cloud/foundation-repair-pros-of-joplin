@@ -1,5 +1,5 @@
 // Joplin High-Authority Backlinks Outreach CRM & Pitch Engine
-// Version 2.0.0 (Northline Luxury Edition)
+// Version 2.1.0 (Universal Bulletproof Edition)
 
 let activeMarketFilter = 'all';
 let activeTierFilter = 'all';
@@ -50,15 +50,6 @@ function initBacklinksCRM() {
     document.querySelector('[data-market-tab="all"]')?.classList.add('active');
     renderBacklinkCards();
   });
-
-  const modal = document.getElementById('pitchModal');
-  const closeBtn = document.getElementById('closePitchModal');
-  if (closeBtn && modal) {
-    closeBtn.addEventListener('click', () => modal.classList.remove('active'));
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.remove('active');
-    });
-  }
 }
 
 function getStoredStatus(targetId) {
@@ -208,86 +199,60 @@ window.openPitchModal = function(targetId) {
   if (!target) return;
 
   const modal = document.getElementById('pitchModal');
-  const body = document.getElementById('pitchModalBody');
-  const title = document.getElementById('pitchModalTitle');
-
-  if (!modal || !body) return;
+  if (!modal) return;
 
   const pitch = getPopulatedPitch(target);
   const currentStatus = getStoredStatus(target.id);
   const targetEmail = target.email || target.contact_email || 'info@domain.com';
-  const placementDisplay = target.placement || target.category;
+  const placementDisplay = target.placement || target.category || 'Accredited Directory';
+  const domainDisplay = target.domain || (target.url ? new URL(target.url).hostname.replace('www.', '') : 'External Site');
 
-  if (title) title.innerHTML = `Tailored Outreach: <strong>${target.name}</strong>`;
+  const titleEl = document.getElementById('pitchModalTitle');
+  const badgeEl = document.getElementById('pitchModalTierBadge');
+  const domainEl = document.getElementById('pitchModalDomain');
+  const drEl = document.getElementById('pitchModalDr');
+  const trafficEl = document.getElementById('pitchModalTraffic');
+  const contactEl = document.getElementById('pitchModalContact');
+  const strategyEl = document.getElementById('pitchModalStrategy');
+  const subjectEl = document.getElementById('pitchModalSubject');
+  const bodyEl = document.getElementById('pitchModalBody');
+  const statusSelect = document.getElementById('pitchModalStatusSelect');
+  const copyBtn = document.getElementById('copyPitchBtn');
+  const mailtoBtn = document.getElementById('dispatchMailtoBtn');
 
-  body.innerHTML = `
-    <div style="background:var(--paper-2); border:1px solid var(--line-dark); border-radius:12px; padding:16px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-      <div>
-        <div style="font-size:0.75rem; text-transform:uppercase; color:var(--muted); font-weight:700; letter-spacing:0.04em;">Target Portal & Placement</div>
-        <div style="font-size:1.05rem; font-weight:700; color:var(--ink);">${placementDisplay}</div>
-        <div style="font-size:0.84rem; color:var(--muted); margin-top:2px;">Target URL: <a href="${target.url}" target="_blank" style="color:var(--bmg-blue);">${target.url}</a></div>
-      </div>
-      <div style="display:flex; align-items:center; gap:10px;">
-        <div class="dr-badge">DR <span>${target.dr}</span></div>
-        <div style="font-size:0.85rem; font-weight:700; color:var(--ink);">${target.traffic} Visits/mo</div>
-      </div>
-    </div>
+  if (titleEl) titleEl.textContent = target.name;
+  if (badgeEl) badgeEl.textContent = target.tier;
+  if (domainEl) domainEl.textContent = domainDisplay;
+  if (drEl) drEl.textContent = 'DR ' + target.dr;
+  if (trafficEl) trafficEl.textContent = target.traffic;
+  if (contactEl) contactEl.textContent = targetEmail;
+  if (strategyEl) strategyEl.textContent = target.strategy || placementDisplay;
+  if (subjectEl) subjectEl.value = pitch.subject;
+  if (bodyEl) bodyEl.value = pitch.body;
 
-    <div style="margin-bottom:16px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-        <span style="font-size:0.82rem; font-weight:700; color:var(--muted); text-transform:uppercase;">Contact Recipient</span>
-        <span style="font-size:0.82rem; color:var(--muted);">Template: <em>${pitch.templateName}</em></span>
-      </div>
-      <input type="text" readonly value="${targetEmail}" style="width:100%; padding:10px 14px; background:var(--paper-2); border:1px solid var(--line-dark); border-radius:8px; font-weight:600; color:var(--ink);">
-    </div>
+  if (statusSelect) {
+    statusSelect.value = currentStatus;
+    statusSelect.onchange = () => setStoredStatus(target.id, statusSelect.value);
+  }
 
-    <div style="margin-bottom:16px;">
-      <div style="font-size:0.82rem; font-weight:700; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">Email Subject Line</div>
-      <input type="text" id="modalPitchSubject" readonly value="${pitch.subject}" style="width:100%; padding:10px 14px; background:var(--paper-2); border:1px solid var(--line-dark); border-radius:8px; font-weight:700; color:var(--ink);">
-    </div>
+  if (copyBtn) {
+    copyBtn.onclick = () => {
+      copyTextToClipboard(pitch.body, 'Pitch email copied to clipboard!');
+    };
+  }
 
-    <div style="margin-bottom:20px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-        <span style="font-size:0.82rem; font-weight:700; color:var(--muted); text-transform:uppercase;">Email Body (Pre-Filled Pitch)</span>
-        <button class="btn btn-dark btn-sm" onclick="copyPitchText('${target.id}')">
-          📋 Copy Body Text
-        </button>
-      </div>
-      <textarea id="modalPitchBody" readonly rows="9" style="width:100%; padding:14px; background:var(--paper-2); border:1px solid var(--line-dark); border-radius:8px; font-family:monospace; font-size:0.86rem; line-height:1.6; color:var(--text); resize:vertical;">${pitch.body}</textarea>
-    </div>
+  if (mailtoBtn) {
+    mailtoBtn.href = `mailto:${encodeURIComponent(targetEmail)}?subject=${encodeURIComponent(pitch.subject)}&body=${encodeURIComponent(pitch.body)}`;
+    mailtoBtn.onclick = () => {
+      setStoredStatus(target.id, 'Pitched');
+    };
+  }
 
-    <div style="border-top:1px solid var(--line-dark); padding-top:18px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;">
-      <div style="display:flex; align-items:center; gap:10px;">
-        <span style="font-size:0.88rem; font-weight:700; color:var(--ink);">CRM Status:</span>
-        <select class="filter-select" style="padding:6px 12px; font-size:0.84rem;" onchange="setStoredStatus('${target.id}', this.value)">
-          <option value="Not Contacted" ${currentStatus === 'Not Contacted' ? 'selected' : ''}>Not Contacted</option>
-          <option value="Pitched" ${currentStatus === 'Pitched' ? 'selected' : ''}>Pitched</option>
-          <option value="Followed Up" ${currentStatus === 'Followed Up' ? 'selected' : ''}>Followed Up</option>
-          <option value="Secured" ${currentStatus === 'Secured' ? 'selected' : ''}>Secured (Live Link!)</option>
-        </select>
-      </div>
-
-      <div style="display:flex; gap:10px;">
-        <button class="btn btn-gold btn-sm" onclick="quickMailto('${target.id}')">
-          Dispatch via Mail Client ↗
-        </button>
-      </div>
-    </div>
-  `;
-
-  modal.classList.add('active');
-};
-
-window.copyPitchText = function(targetId) {
-  const target = BMG_BACKLINK_TARGETS.find(t => String(t.id) === String(targetId));
-  if (!target) return;
-  const pitch = getPopulatedPitch(target);
-  if (typeof copyTextToClipboard === 'function') {
-    copyTextToClipboard(pitch.body, 'Pitch email copied to clipboard!');
+  if (typeof openModal === 'function') {
+    openModal(modal);
   } else {
-    navigator.clipboard.writeText(pitch.body).then(() => {
-      alert('Pitch email copied to clipboard!');
-    });
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
   }
 };
 

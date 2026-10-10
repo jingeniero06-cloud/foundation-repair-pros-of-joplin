@@ -330,7 +330,7 @@ window.inspectPageDetails = function(recordId) {
     </div>
   `;
 
-  modal.classList.add('active');
+  if (typeof openModal === "function") { openModal(modal); } else { modal.classList.add("active"); document.body.style.overflow = "hidden"; }
 
   const closeBtn = document.getElementById('closePageDetailModal');
   if (closeBtn) {
