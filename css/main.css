@@ -1,47 +1,49 @@
 /* ==========================================================================
-   Bay Property Management Group — Property Intelligence & Forensic SEO Suite
-   Ultra-Premium Editorial Design System (Northline Luxury Tier)
+   Foundation Repair Pros of Joplin — Engineering & Property Intelligence Suite
+   Casual Modern Tech Theme (Approachable Neo-Tech & Friendly Modern SaaS)
    ========================================================================== */
 
 :root {
-  /* Northline Editorial Luxury Palette */
-  --ink: #0b1220;               /* Deep Obsidian / Midnight */
-  --ink-2: #111a2e;             /* Midnight Navy */
-  --ink-3: #1a2540;             /* Elevated Ink Surface */
-  --paper: #f7f4ee;             /* Warm Editorial Linen / Parchment */
-  --paper-2: #efeae0;           /* Soft Muted Sand */
-  --paper-card: #ffffff;        /* Pure White Card */
-  --text: #0f172a;              /* Slate 900 Primary Text */
-  --muted: #5b6475;             /* Refined Slate Muted */
-  --muted-light: #9aa4b8;       /* Subtle Text on Ink */
+  /* Casual Modern Tech Theme Palette */
+  --ink: #134e4a;               /* Deep Forest Ink */
+  --ink-2: #0f3d3a;             /* Deep Teal Slate */
+  --ink-3: #1a4945;             /* Elevated Teal Surface */
+  --paper: #f7f9f9;             /* Soft Mint-Gray Canvas */
+  --paper-2: #edf2f2;           /* Soft Surface Alt */
+  --paper-card: #ffffff;        /* Crisp White Card */
+  --text: #283e3c;              /* Deep Forest Teal Text */
+  --muted: #627b79;             /* Approachable Slate-Teal Muted */
+  --muted-light: #94a9a7;       /* Subtle Text on Ink */
   
-  /* Brand Prestige Accents */
-  --gold: #c9a35b;              /* Regal Champagne Gold */
-  --gold-2: #e3c48a;            /* Light Champagne Shimmer */
-  --bmg-blue: #1078BE;          /* Active BMG Brand Blue */
-  --bmg-navy: #1B4073;          /* BMG Heritage Navy */
-  --teal: #4fd1c5;              /* Signal Teal */
-  --green: #5fd39a;             /* Success Emerald */
-  --amber: #f2b45a;             /* Warning Honey Amber */
-  --red: #f0726a;               /* Critical Coral Red */
+  /* Brand Casual Neo-Tech Accents */
+  --gold: #0d9488;              /* Friendly Emerald Teal (Primary Accent) */
+  --gold-2: #14b8a6;            /* Vibrant Light Teal Highlight */
+  --bmg-blue: #0284c7;          /* Sky Blue Accent */
+  --bmg-navy: #134e4a;          /* Forest Ink */
+  --teal: #0d9488;              /* Signal Emerald Teal */
+  --green: #10b981;             /* Success Mint Green */
+  --amber: #f97316;             /* Warm Tangerine Coral (Alert/Warning) */
+  --red: #ef4444;               /* Critical Coral Red */
   
   /* Structural Hairlines & Insets */
-  --line: rgba(255, 255, 255, 0.09);
-  --line-strong: rgba(255, 255, 255, 0.16);
-  --line-dark: #e6e2d8;
-  --line-dark-hover: #d8cfbd;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.22);
+  --line-dark: #d5e0df;         /* Soft Mint-Gray Border */
+  --line-dark-hover: #bccac9;   /* Hover Border */
   
-  /* Radii & Shadows */
+  /* Soft Modern Radii & Elevation */
   --radius-sm: 8px;
-  --radius: 18px;
+  --radius: 16px;
   --radius-lg: 24px;
-  --shadow: 0 30px 80px -30px rgba(11, 18, 32, 0.45);
-  --shadow-card: 0 16px 40px -20px rgba(11, 18, 32, 0.08);
-  --shadow-hover: 0 24px 50px -28px rgba(11, 18, 32, 0.35);
+  --radius-pill: 9999px;
+  --shadow: 0 25px 60px -20px rgba(13, 148, 136, 0.16);
+  --shadow-card: 0 10px 25px -5px rgba(13, 148, 136, 0.07), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 0 20px 40px -15px rgba(13, 148, 136, 0.18);
   
-  /* Typography */
-  --serif: "Fraunces", Georgia, "Times New Roman", serif;
-  --sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Typography: Friendly, geometric, highly legible Plus Jakarta Sans */
+  --serif: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --max: 1200px;
 }
 
@@ -106,7 +108,7 @@ p {
    TOP ANNOUNCEMENT BAR
    ========================================================================== */
 .top-strip {
-  background: #080e18;
+  background: var(--ink-2);
   color: var(--muted-light);
   font-size: 0.8125rem;
   min-height: 40px;
@@ -134,9 +136,9 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(201, 163, 91, 0.16);
+  background: rgba(13, 148, 136, 0.2);
   color: var(--gold-2);
-  border: 1px solid rgba(201, 163, 91, 0.35);
+  border: 1px solid rgba(20, 184, 166, 0.35);
   font-size: 0.68rem;
   font-weight: 700;
   height: 22px;
@@ -172,14 +174,14 @@ p {
    SITE HEADER & NAVIGATION
    ========================================================================== */
 .site-header {
-  background: rgba(11, 18, 32, 0.98);
+  background: rgba(15, 61, 58, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 20px rgba(15, 61, 58, 0.25);
 }
 .nav {
   display: flex;
@@ -201,6 +203,12 @@ p {
   height: 34px;
   flex: none;
   display: block;
+}
+.logo svg rect {
+  stroke: var(--gold-2) !important;
+}
+.logo svg path {
+  stroke: var(--gold) !important;
 }
 .logo > div,
 .logo .logo-text {
@@ -269,8 +277,9 @@ p {
 }
 .nav-links a.active:not(.btn) {
   color: var(--gold-2) !important;
-  background: rgba(201, 163, 91, 0.12) !important;
-  border: 1px solid rgba(201, 163, 91, 0.32) !important;
+  background: rgba(13, 148, 136, 0.18) !important;
+  border: 1px solid rgba(20, 184, 166, 0.35) !important;
+  color: #ffffff !important;
   font-weight: 600;
 }
 
@@ -279,14 +288,14 @@ p {
 .nav-links a.btn-gold,
 .nav-links a.btn {
   background: linear-gradient(135deg, var(--gold-2) 0%, var(--gold) 100%) !important;
-  color: #0b1220 !important;
+  color: #ffffff !important;
   font-weight: 700 !important;
   font-size: 0.86rem !important;
   height: 38px !important;
   padding: 0 18px !important;
   border-radius: 999px !important;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  box-shadow: 0 4px 16px -2px rgba(201, 163, 91, 0.55) !important;
+  box-shadow: 0 4px 16px -2px rgba(13, 148, 136, 0.55) !important;
   margin-left: 8px;
   white-space: nowrap !important;
   line-height: 1 !important;
@@ -297,10 +306,10 @@ p {
 .nav-links .btn-gold:hover,
 .nav-links a.btn-gold:hover,
 .nav-links a.btn:hover {
-  background: linear-gradient(135deg, #ebd19e 0%, #d4b067 100%) !important;
-  color: #0b1220 !important;
+  background: linear-gradient(135deg, #2dd4bf 0%, #0f766e 100%) !important;
+  color: #ffffff !important;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px -2px rgba(201, 163, 91, 0.75) !important;
+  box-shadow: 0 6px 20px -2px rgba(13, 148, 136, 0.75) !important;
 }
 
 /* Luxury Buttons */
@@ -325,15 +334,15 @@ p {
 }
 .btn-gold {
   background: linear-gradient(135deg, var(--gold-2) 0%, var(--gold) 100%);
-  color: #0b1220 !important;
-  box-shadow: 0 10px 24px -8px rgba(201, 163, 91, 0.7);
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px -8px rgba(13, 148, 136, 0.55);
   border-color: rgba(255,255,255,0.25);
   font-weight: 700;
 }
 .btn-gold:hover {
-  background: linear-gradient(135deg, #ebd19e 0%, #d4b067 100%);
-  color: #0b1220 !important;
-  box-shadow: 0 14px 28px -6px rgba(201, 163, 91, 0.85);
+  background: linear-gradient(135deg, #2dd4bf 0%, #0f766e 100%);
+  color: #ffffff !important;
+  box-shadow: 0 14px 28px -6px rgba(13, 148, 136, 0.75);
 }
 .btn-ghost {
   border-color: rgba(255, 255, 255, 0.25);
@@ -385,11 +394,11 @@ p {
 }
 
 /* ==========================================================================
-   HERO SECTION (NORTHLINE EDITORIAL WITH LIVE REPORT GAUGE)
+   HERO SECTION (CASUAL MODERN TECH WITH LIVE REPORT GAUGE)
    ========================================================================== */
 .hero {
-  background: radial-gradient(circle at 85% 20%, rgba(201, 163, 91, 0.15) 0%, transparent 60%),
-              radial-gradient(circle at 15% 90%, rgba(16, 120, 190, 0.12) 0%, transparent 50%),
+  background: radial-gradient(circle at 85% 20%, rgba(13, 148, 136, 0.22) 0%, transparent 60%),
+              radial-gradient(circle at 15% 90%, rgba(249, 115, 22, 0.12) 0%, transparent 50%),
               var(--ink);
   color: #ffffff;
   padding: 80px 0 90px;
@@ -408,31 +417,31 @@ p {
   align-items: center;
   gap: 8px;
   font-size: 0.78rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--gold-2);
-  background: rgba(201, 163, 91, 0.1);
+  color: #a7f3d0;
+  background: rgba(13, 148, 136, 0.15);
   padding: 6px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(201, 163, 91, 0.28);
+  border: 1px solid rgba(20, 184, 166, 0.35);
   margin-bottom: 22px;
 }
 .eyebrow .dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 8px var(--gold);
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
 }
 .hero h1 {
   color: #ffffff;
   margin-bottom: 20px;
 }
 .hero h1 em {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--gold-2);
+  font-style: normal;
+  font-weight: 700;
+  color: #2dd4bf;
 }
 .hero .lead {
   font-size: 1.15rem;
@@ -1204,7 +1213,7 @@ table.data-table tr:last-child td {
     top: 72px;
     left: 0;
     right: 0;
-    background: #0b1220;
+    background: var(--ink);
     padding: 20px 24px 28px;
     border-bottom: 1px solid var(--line);
     gap: 10px;

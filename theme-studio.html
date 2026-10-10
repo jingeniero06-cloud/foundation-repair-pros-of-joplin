@@ -587,7 +587,7 @@
     </div>
 
     <div class="theme-buttons">
-      <button class="theme-btn active" onclick="switchTheme('engineering')">
+      <button class="theme-btn" onclick="switchTheme('engineering')">
         📐 1. Precision Engineering
       </button>
       <button class="theme-btn" onclick="switchTheme('white')">
@@ -596,8 +596,8 @@
       <button class="theme-btn" onclick="switchTheme('executive')">
         🏛️ 3. Executive Architectural
       </button>
-      <button class="theme-btn" onclick="switchTheme('casual')">
-        🌿 4. Casual Modern Tech
+      <button class="theme-btn active" onclick="switchTheme('casual')">
+        🌿 4. Casual Modern Tech (Active)
       </button>
       <button class="theme-btn" onclick="switchTheme('sop-machine')">
         ⚡ 5. SOP Machine Blueprint
@@ -894,6 +894,9 @@
     function openDemoModal() {
       alert('The Universal Modal System is active. Any chosen theme will automatically style all modals with its custom fonts, border-radius, and luxury backdrop blur.');
     }
+
+    // Default to Casual Modern Tech
+    switchTheme('casual');
   </script>
 </body>
 </html>
