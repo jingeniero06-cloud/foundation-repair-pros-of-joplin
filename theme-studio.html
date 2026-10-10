@@ -6,7 +6,7 @@
   <title>Theme Studio & Design System Selector | Client Intelligence Suite</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Jost:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
   
   <style>
     /* ==========================================================================
@@ -130,6 +130,44 @@
       --th-header-text: #134e4a;
       --th-header-line: #e2e8e8;
       --th-tag: "Casual Modern Tech";
+    }
+
+    /* THEME 5: SOP Machine Blueprint (Michael-215 Cloudflare Dev Style) */
+    [data-theme="sop-machine"] {
+      --th-bg: #dfe4e5;
+      --th-surface: #ffffff;
+      --th-surface-alt: #f3f5f6;
+      --th-ink: #0b1c22;
+      --th-text: #1b1b1b;
+      --th-muted: #5b6a70;
+      --th-primary: #e9880b; /* Safety amber */
+      --th-primary-hover: #d27907;
+      --th-primary-text: #0b1c22;
+      --th-accent: #2f67f6; /* Engineering cobalt */
+      --th-border: rgba(19, 43, 52, 0.2);
+      --th-border-strong: rgba(19, 43, 52, 0.35);
+      --th-badge-bg: #e8f3fb;
+      --th-badge-text: #2271b1;
+      --th-font-heading: 'Jost', sans-serif;
+      --th-font-body: 'Jost', sans-serif;
+      --th-font-mono: 'IBM Plex Mono', monospace;
+      --th-radius-sm: 4px;
+      --th-radius: 8px;
+      --th-radius-lg: 14px;
+      --th-radius-pill: 9999px;
+      --th-shadow: 0 20px 55px rgba(12, 30, 36, 0.16);
+      --th-header-bg: #0b1c22;
+      --th-header-text: #ffffff;
+      --th-header-line: rgba(255, 255, 255, 0.12);
+      --th-tag: "SOP Machine Blueprint";
+    }
+
+    body[data-theme="sop-machine"] {
+      background-color: #dfe4e5;
+      background-image:
+        linear-gradient(rgba(19, 43, 52, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(19, 43, 52, 0.035) 1px, transparent 1px);
+      background-size: 24px 24px;
     }
 
     /* ==========================================================================
@@ -496,7 +534,7 @@
     /* THEME COMPARISON CARDS AT BOTTOM */
     .comparison-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 16px;
       margin-top: 48px;
     }
@@ -561,6 +599,9 @@
       <button class="theme-btn" onclick="switchTheme('casual')">
         🌿 4. Casual Modern Tech
       </button>
+      <button class="theme-btn" onclick="switchTheme('sop-machine')">
+        ⚡ 5. SOP Machine Blueprint
+      </button>
     </div>
   </header>
 
@@ -578,7 +619,8 @@
         </p>
       </div>
 
-      <div style="display: flex; gap: 10px;">
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a href="sop-blueprint.html" class="btn btn-outline" style="background:#e9880b; color:#0b1c22; font-weight:800; border:none; text-decoration:none;">⚡ Open Full Interactive SOP Machine Page →</a>
         <button class="btn btn-primary" onclick="alert('Theme selected! This design can be set as the default for your projects.')">Select This Theme</button>
         <button class="btn btn-outline" onclick="openDemoModal()">Preview Modal</button>
       </div>
@@ -775,6 +817,25 @@
           <p><strong>Vibe:</strong> Warm, approachable, playful modern SaaS, soft rounded pills.</p>
           <p style="margin-top: 8px;"><strong>Best for:</strong> Consumer-facing home services, friendly residential inspections.</p>
         </div>
+
+        <!-- 5. SOP Machine Blueprint -->
+        <div class="comparison-card" style="border: 1px solid #e9880b; background: rgba(233, 136, 11, 0.03);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <h4>5. SOP Machine Blueprint</h4>
+            <span style="background: #e9880b; color: #0b1c22; font-size: 9px; font-weight: 900; padding: 2px 6px; border-radius: 4px; font-family: monospace;">NEW FAV</span>
+          </div>
+          <p style="color: var(--th-muted); margin-bottom: 8px;">Cloudflare Fleet & macOS Browser Chrome</p>
+          <div class="palette-swatches">
+            <div class="swatch" style="background: #0b1c22;" title="Petroleum Deep Navy"></div>
+            <div class="swatch" style="background: #e9880b;" title="Safety Hazard Amber"></div>
+            <div class="swatch" style="background: #dfe4e5;" title="Blueprint Grid Paper"></div>
+            <div class="swatch" style="background: #2f67f6;" title="Engineering Cobalt"></div>
+          </div>
+          <p><strong>Fonts:</strong> Jost (Architectural) + IBM Plex Mono</p>
+          <p><strong>Vibe:</strong> High-precision engineering dashboard, blueprint grid, interactive numbered pins (01-07), sticky petroleum inspector rail.</p>
+          <p style="margin-top: 8px;"><strong>Best for:</strong> Forensic audits, developer deliverables, engineering SOPs.</p>
+          <a href="sop-blueprint.html" style="display: inline-block; margin-top: 10px; font-size: 11px; font-weight: 800; color: #0b1c22; background: #e9880b; padding: 6px 10px; border-radius: 4px; text-decoration: none;">Launch Standalone SOP View →</a>
+        </div>
       </div>
     </div>
 
@@ -801,6 +862,11 @@
         name: 'Casual Modern Tech',
         title: 'Casual Modern Tech & Approachable SaaS',
         desc: 'Warm soft-cream tones, friendly teal accents, rounded pill-shaped components, and welcoming, approachable micro-interactions.'
+      },
+      'sop-machine': {
+        name: 'SOP Machine Blueprint',
+        title: 'SOP Machine & Industrial Blueprint',
+        desc: 'Inspired by CityThrive / Cloudflare Fleet SOP: cool blueprint grid canvas (#dfe4e5), deep petroleum navy (#0b1c22), safety amber accents (#e9880b), browser-frame window chrome, and monospaced technical inspector rails.'
       }
     };
 
@@ -812,7 +878,7 @@
 
       document.querySelectorAll('.theme-btn').forEach(btn => {
         btn.classList.remove('active');
-        if (btn.textContent.toLowerCase().includes(themeKey)) {
+        if (btn.getAttribute('onclick')?.includes(themeKey)) {
           btn.classList.add('active');
         }
       });

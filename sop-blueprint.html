@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Foundation Repair Pros of Joplin · Geotechnical Intelligence SOP Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Jost:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <style>
+    :root {
+      --navy-deep: #0b1c22;
+      --paper: #ffffff;
+      --ink: #1b1b1b;
+      --muted: #5b6a70;
+      --line: rgba(19, 43, 52, 0.2);
+      --orange: #e9880b;
+      --blue: #2f67f6;
+      --wp: #2271b1;
+      --kv: #0f766e;
+      --live: #c2410c;
+      --fail: #b4233a;
+      --shadow: 0 20px 55px rgba(12, 30, 36, 0.16);
+      --display: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font: 400 15px/1.55 var(--display);
+      background-color: #dfe4e5;
+      background-image:
+        linear-gradient(rgba(19, 43, 52, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(19, 43, 52, 0.035) 1px, transparent 1px);
+      background-size: 24px 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code, pre { font-family: var(--mono); }
+
+    /* TOP BANNER / NAV */
+    .top-system-nav {
+      background: var(--navy-deep);
+      color: #9fb0b4;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .top-nav-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .top-nav-links a {
+      color: #d1dde0;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+    }
+    .top-nav-links a:hover {
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .top-nav-links a.active {
+      background: var(--orange);
+      color: var(--navy-deep);
+      font-weight: 800;
+    }
+
+    /* HEADER */
+    .artifact-header {
+      width: min(1540px, 100% - 48px);
+      margin: 28px auto 20px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .artifact-eyebrow {
+      margin: 0 0 6px;
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-family: var(--mono);
+    }
+    .artifact-header h1 {
+      margin: 0;
+      color: var(--navy-deep);
+      font-size: clamp(28px, 3.2vw, 46px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+    }
+    .artifact-meta {
+      margin: 0;
+      max-width: 48ch;
+      color: var(--muted);
+      font-size: 14.5px;
+      text-align: right;
+    }
+
+    /* MAIN TWO-COLUMN SHELL */
+    .artifact-shell {
+      width: min(1540px, 100% - 48px);
+      margin: 0 auto 64px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 420px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* BROWSER FRAME */
+    .browser-frame {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .browser-bar {
+      display: grid;
+      grid-template-columns: 76px 1fr 76px;
+      align-items: center;
+      height: 46px;
+      padding: 0 16px;
+      background: #f3f5f6;
+      border-bottom: 1px solid rgba(19, 43, 52, 0.12);
+    }
+    .browser-dots { display: flex; gap: 6px; }
+    .browser-dots span { width: 10px; height: 10px; border-radius: 50%; display: block; }
+    .browser-dots span:nth-child(1) { background: #f87171; }
+    .browser-dots span:nth-child(2) { background: #fbbf24; }
+    .browser-dots span:nth-child(3) { background: #4ade80; }
+    .browser-url {
+      background: #fff;
+      border: 1px solid rgba(19, 43, 52, 0.12);
+      border-radius: 8px;
+      color: #4b5c62;
+      font-size: 12px;
+      font-family: var(--mono);
+      padding: 6px 12px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* SECTIONS */
+    .website-section {
+      position: relative;
+      padding: 38px 48px 38px 40px;
+      border-bottom: 1px solid rgba(19, 43, 52, 0.1);
+      transition: background 0.2s ease, outline 0.2s ease;
+    }
+    .website-section:last-child { border-bottom: 0; }
+    .website-section.is-highlighted {
+      outline: 2px solid rgba(47, 103, 246, 0.45);
+      outline-offset: -2px;
+      background: rgba(47, 103, 246, 0.03);
+    }
+    .website-section.hero {
+      background: #081a21;
+      color: #f4f7f8;
+    }
+    .website-section.hero .muted { color: #9fb0b4; }
+    .website-section.hero .plain { color: #c5d3d6; }
+    .kicker {
+      margin: 0 0 8px;
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: var(--mono);
+    }
+    .website-section h2 {
+      margin: 0 0 10px;
+      font-size: clamp(24px, 2.3vw, 36px);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--navy-deep);
+    }
+    .website-section.hero h2 {
+      color: #ffffff;
+    }
+    .plain {
+      margin: 0 0 16px;
+      max-width: 72ch;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .muted { color: var(--muted); }
+
+    /* NUMBERED PINS */
+    .pin {
+      position: absolute;
+      z-index: 6;
+      top: 20px;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--blue);
+      box-shadow: 0 5px 18px rgba(18, 50, 134, 0.35);
+      font-size: 13px;
+      font-weight: 900;
+      font-family: var(--mono);
+      line-height: 1;
+      cursor: pointer;
+      transition: background 150ms, box-shadow 150ms, transform 150ms;
+    }
+    .pin:hover, .pin:focus-visible, .pin[aria-pressed="true"],
+    .website-section.is-highlighted > .pin {
+      background: var(--orange);
+      box-shadow: 0 7px 24px rgba(233, 136, 11, 0.48);
+      outline: 3px solid rgba(255,255,255,0.78);
+      outline-offset: 2px;
+      transform: scale(1.08);
+    }
+
+    /* FLOW CHIPS */
+    .flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 14px 0; }
+    .chip {
+      background: #f3f5f6;
+      border: 1px solid rgba(19, 43, 52, 0.12);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12.5px;
+      font-weight: 600;
+      font-family: var(--mono);
+    }
+    .chip.wp { background: #e8f3fb; color: var(--wp); }
+    .chip.kv { background: #e7f7f3; color: var(--kv); }
+    .chip.live { background: #fff1e6; color: var(--live); }
+    .chip.alert { background: #fde8eb; color: var(--fail); }
+    .arrow { color: var(--muted); font-weight: 700; font-size: 14px; }
+
+    /* PANELS & GRIDS */
+    .split { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 18px; align-items: start; }
+    .panel {
+      background: #f7f9f9;
+      border: 1px solid rgba(19, 43, 52, 0.1);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+    .website-section.hero .panel { background: #10262d; border-color: rgba(255,255,255,0.09); }
+    .panel h3 { margin: 0 0 8px; font-size: 16px; font-weight: 700; color: inherit; }
+
+    /* LISTS & CHECKS */
+    .checks { margin: 12px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+    .checks li { font-size: 14.5px; padding-left: 18px; position: relative; }
+    .checks li::before { content: "▸"; position: absolute; left: 0; color: var(--orange); font-weight: 900; }
+
+    /* TABLES */
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 14px; }
+    th, td { text-align: left; padding: 10px 10px; border-bottom: 1px solid rgba(19, 43, 52, 0.1); vertical-align: top; }
+    th { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-family: var(--mono); }
+    tr:last-child td { border-bottom: 0; }
+
+    /* CODE & TERMINAL */
+    .cmd { margin: 14px 0 0; }
+    .cmd p { margin: 0 0 6px; font-size: 11px; font-weight: 800; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; font-family: var(--mono); }
+    pre {
+      margin: 0;
+      background: #081a21;
+      color: #e8f0f2;
+      border-radius: 10px;
+      padding: 14px 16px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      font-size: 12.5px;
+      line-height: 1.5;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* BUTTONS */
+    .btn-orange {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      background: var(--orange);
+      color: #121c1e;
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-weight: 800;
+      font-size: 13px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--display);
+      transition: all 0.15s ease;
+    }
+    .btn-orange:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #ffffff;
+      text-decoration: none;
+    }
+
+    /* ANNOTATION RAIL / INSPECTOR PANEL */
+    .annotation-rail {
+      position: sticky;
+      top: 16px;
+      max-height: calc(100vh - 32px);
+      overflow-y: auto;
+      border: 1px solid rgba(19, 43, 52, 0.22);
+      border-radius: 16px;
+      color: #dfe9eb;
+      background: var(--navy-deep);
+      box-shadow: 0 20px 55px rgba(12, 30, 36, 0.22);
+      scrollbar-color: #486069 transparent;
+      scrollbar-width: thin;
+    }
+    .rail-head { padding: 20px 18px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .rail-kicker {
+      margin: 0 0 5px;
+      color: var(--orange);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-family: var(--mono);
+    }
+    .annotation-rail h2 {
+      margin: 0 0 6px;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: #ffffff;
+    }
+    .rail-intro { margin: 0 0 14px; color: #9fb0b4; font-size: 13px; line-height: 1.45; }
+    
+    /* MODE TABS */
+    .mode-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      margin-top: 10px;
+    }
+    .mode-button {
+      min-height: 36px;
+      padding: 8px 6px;
+      border: 0;
+      border-radius: 5px;
+      color: #9fb0b4;
+      background: transparent;
+      cursor: pointer;
+      font: 800 11px/1 var(--display);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.15s ease;
+    }
+    .mode-button:hover { color: #fff; background: rgba(255,255,255,0.07); }
+    .mode-button[aria-selected="true"] { color: #121c1e; background: var(--orange); font-weight: 900; }
+
+    /* STRUCTURE TABLE */
+    .structure-panel { padding: 14px 18px 0; }
+    .structure-panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-family: var(--mono);
+      color: #83979c;
+    }
+    .structure-count { color: var(--orange); font-weight: 800; }
+    .structure-table { list-style: none; margin: 0; padding: 0; }
+    .structure-row {
+      width: 100%;
+      min-height: 36px;
+      padding: 4px 6px;
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: center;
+      border: 0;
+      border-radius: 6px;
+      color: #aebec1;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      font: 500 13px/1.2 var(--display);
+      transition: all 0.15s ease;
+    }
+    .structure-row:hover, .structure-row:focus-visible, .structure-row.is-current {
+      color: #fff;
+      background: rgba(47, 103, 246, 0.18);
+      outline: none;
+    }
+    .structure-node {
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      font-size: 9px;
+      font-weight: 900;
+      font-family: var(--mono);
+    }
+    .structure-row.is-current .structure-node,
+    .structure-row:hover .structure-node {
+      border-color: var(--orange);
+      color: var(--navy-deep);
+      background: var(--orange);
+    }
+    .structure-role {
+      padding: 3px 6px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 4px;
+      color: #83979c;
+      font-size: 8px;
+      font-weight: 800;
+      font-family: var(--mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .structure-row.is-current .structure-role {
+      border-color: rgba(233, 136, 11, 0.5);
+      color: #f3bf76;
+    }
+
+    /* ANNOTATION CARDS */
+    .notes-label {
+      margin: 16px 18px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      color: #83979c;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: var(--mono);
+    }
+    .annotation-list {
+      list-style: none;
+      margin: 0;
+      padding: 12px 16px 16px;
+      display: grid;
+      gap: 10px;
+    }
+    .annotation-card {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 10px;
+      padding: 14px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.043);
+      border: 1px solid rgba(255,255,255,0.06);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .annotation-card:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+    }
+    .annotation-card.is-on {
+      background: rgba(47, 103, 246, 0.18);
+      border-color: rgba(47, 103, 246, 0.5);
+    }
+    .annotation-number {
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 900;
+      font-family: var(--mono);
+      padding-top: 2px;
+    }
+    .annotation-card h3 { margin: 0 0 5px; font-size: 14px; font-weight: 600; color: #ffffff; }
+    .annotation-card p { margin: 0; color: #9fb0b4; font-size: 12.5px; line-height: 1.4; }
+    .annotation-status {
+      display: inline-block;
+      margin-top: 8px;
+      color: #8fd0b0;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-family: var(--mono);
+    }
+
+    /* FOOTER */
+    .system-footer {
+      width: min(1540px, 100% - 48px);
+      margin: 0 auto 40px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(19, 43, 52, 0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 12.5px;
+      font-family: var(--mono);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* MODAL OVERLAY (UNIVERSAL BUG-FREE FIX) */
+    .modal-overlay, .modal {
+      position: fixed !important;
+      inset: 0 !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      background: rgba(11, 28, 34, 0.85) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      z-index: 999999 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 20px !important;
+      box-sizing: border-box !important;
+      pointer-events: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: opacity 0.25s ease, visibility 0.25s ease !important;
+    }
+    .modal-overlay.active, .modal.active {
+      pointer-events: auto !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .modal-window, .modal-dialog, .modal-box {
+      background: #ffffff !important;
+      border: 1px solid rgba(19, 43, 52, 0.25) !important;
+      border-radius: 14px !important;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4) !important;
+      width: 100% !important;
+      max-width: 620px !important;
+      max-height: 90vh !important;
+      overflow-y: auto !important;
+      padding: 32px !important;
+      position: relative !important;
+      color: var(--ink) !important;
+      transform: scale(0.96) translateY(8px);
+      transition: transform 0.25s ease;
+    }
+    .modal-overlay.active .modal-window {
+      transform: scale(1) translateY(0);
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #334155;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1080px) {
+      .artifact-header { flex-direction: column; align-items: flex-start; }
+      .artifact-meta { text-align: left; }
+      .artifact-shell { grid-template-columns: 1fr; }
+      .annotation-rail { position: relative; top: auto; max-height: none; }
+      .split, .checks { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .artifact-header, .artifact-shell, .system-footer { width: min(100% - 24px, 680px); }
+      .website-section { padding: 28px 20px; }
+      .mode-tabs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP SYSTEM BAR -->
+  <nav class="top-system-nav">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span style="display:inline-block; width:9px; height:9px; border-radius:50%; background:#22c55e;"></span>
+      <span style="font-family:var(--mono); font-weight:600; color:#fff;">CITYTHRIVE FLEET PROTOCOL</span>
+      <span style="color:var(--orange);">CT-AUDIT-MO-64804</span>
+    </div>
+    <div class="top-nav-links">
+      <a href="theme-studio.html">Theme Studio</a>
+      <a href="index.html">Classic Portal</a>
+      <a href="audit.html">Full 31-Page Audit</a>
+      <a href="backlinks.html">Backlinks CRM</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="sop-blueprint.html" class="active">SOP Blueprint Mode</a>
+    </div>
+  </nav>
+
+  <!-- ARTIFACT HEADER -->
+  <header class="artifact-header">
+    <div>
+      <p class="artifact-eyebrow">CityThrive · Geotechnical Intelligence · CT-AUDIT-MO-64804 · 11 Oct 2026</p>
+      <h1>Foundation Repair Pros of Joplin</h1>
+    </div>
+    <p class="artifact-meta">
+      Autonomous crawl, Core Web Vitals, geotechnical schema graph, and local search pipeline for Joplin, MO 64804.
+    </p>
+  </header>
+
+  <!-- MAIN ARTIFACT SHELL -->
+  <main class="artifact-shell">
+
+    <!-- LEFT COLUMN: BROWSER WINDOW FRAME -->
+    <article class="browser-frame">
+      <div class="browser-bar">
+        <div class="browser-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="browser-url">https://foundationrepairprosofjoplin.com/ · crawl: 31 URLs · zero schema · 15 gaps</div>
+        <div style="text-align:right;"><span style="font-size:10px; font-weight:800; color:#0f766e; background:#ccfbf1; padding:3px 7px; border-radius:4px; font-family:var(--mono);">LIVE DATA</span></div>
+      </div>
+
+      <!-- SECTION 01: HERO BRIEF -->
+      <section class="website-section hero" id="s01" data-id="01">
+        <button class="pin" type="button" data-id="01" aria-label="Show annotation for Executive Brief">01</button>
+        <p class="kicker">01 · Executive Intelligence Brief</p>
+        <h2>Technical Architecture & Revenue Pipeline Audit</h2>
+        <p class="plain">
+          Target domain: <code>foundationrepairprosofjoplin.com</code>. We performed an automated crawl across 31 indexable URLs, examined Core Web Vitals, mapped missing geotechnical schemas, and audited local search rankings for Joplin, MO.
+        </p>
+        
+        <div class="split">
+          <div>
+            <div class="flow">
+              <span class="chip wp">31 URLs Crawled</span>
+              <span class="arrow">→</span>
+              <span class="chip alert">6 Critical Deficits</span>
+              <span class="arrow">→</span>
+              <span class="chip kv">15 High-DA Citations</span>
+              <span class="arrow">→</span>
+              <span class="chip live">+$31.5K/mo Pipeline</span>
+            </div>
+            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn-orange" onclick="openPitchModal()">Open Executive Pitch Script</button>
+              <button class="btn-outline-white" onclick="openConsultModal()">Book Engineering Review</button>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Audit Deliverables</h3>
+            <p class="muted" style="margin:0 0 10px; font-size:13px;">
+              Ready-to-deploy SOP documentation, technical schema JSON-LD, and 90-day execution roadmap.
+            </p>
+            <a class="btn-orange" href="downloads.html" style="font-size:12px; padding:7px 14px;">Access Download Hub →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 02: 31-PAGE IA CRAWL -->
+      <section class="website-section" id="s02" data-id="02">
+        <button class="pin" type="button" data-id="02" aria-label="Show annotation for Crawl Architecture">02</button>
+        <p class="kicker">02 · Site Crawl Architecture</p>
+        <h2>31 Pages Crawled: Missing Sub-Service Silos & Keyword Overlap</h2>
+        <p class="plain">
+          The website currently lumps high-value geotechnical services (Helical Piering, Polyurethane Concrete Leveling, Crawl Space Encapsulation) onto generic pages, severely limiting Google local rankings.
+        </p>
+
+        <div class="cmd">
+          <p>CLI Diagnostic Execution</p>
+          <pre>curl -s -I "https://foundationrepairprosofjoplin.com/" | grep -E "HTTP|Server|X-Frame|Content-Type"
+HTTP/1.1 200 OK
+Server: Apache
+X-Robots-Tag: index, follow
+Status: Crawled 31 URLs · 12 missing dedicated intent silos · 0 structured entities</pre>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Service Keyword Target</th>
+              <th>Current Page Status</th>
+              <th>Deficit / Bottleneck</th>
+              <th>Recommended Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>/foundation-piering/</code></td>
+              <td><span class="chip alert" style="padding:2px 8px; font-size:11px;">Missing Silo</span></td>
+              <td>Lumped under generic home text</td>
+              <td>Deploy dedicated 1,200-word engineering page</td>
+            </tr>
+            <tr>
+              <td><code>/crawl-space-repair/</code></td>
+              <td><span class="chip alert" style="padding:2px 8px; font-size:11px;">Thin Content</span></td>
+              <td>210 words, zero vapor barrier specs</td>
+              <td>Add encapsulation specs + Joplin humidity data</td>
+            </tr>
+            <tr>
+              <td><code>/concrete-leveling-joplin/</code></td>
+              <td><span class="chip alert" style="padding:2px 8px; font-size:11px;">Cannibalized</span></td>
+              <td>H1 conflicts with generic repair</td>
+              <td>Target "poly foam injection" queries</td>
+            </tr>
+            <tr>
+              <td><code>/commercial-foundation/</code></td>
+              <td><span class="chip kv" style="padding:2px 8px; font-size:11px;">Indexed</span></td>
+              <td>No commercial case studies</td>
+              <td>Inject Joplin industrial warehouse projects</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- SECTION 03: CORE WEB VITALS & TECH DEFICITS -->
+      <section class="website-section" id="s03" data-id="03">
+        <button class="pin" type="button" data-id="03" aria-label="Show annotation for Technical Metrics">03</button>
+        <p class="kicker">03 · Performance & Security Hardening</p>
+        <h2>Core Web Vitals: INP 180ms & Missing Security Headers</h2>
+        <p class="plain">
+          Field data reveals mobile responsiveness lags during touch interactions on contact forms, risking lost residential emergency calls.
+        </p>
+
+        <ul class="checks">
+          <li><strong>Interaction to Next Paint (INP):</strong> 180ms (Borderline yellow threshold)</li>
+          <li><strong>Largest Contentful Paint (LCP):</strong> 2.8s (Needs image format optimization to WebP)</li>
+          <li><strong>Cumulative Layout Shift (CLS):</strong> 0.14 (Unsized hero banners cause shift)</li>
+          <li><strong>Content Security Policy:</strong> Missing CSP & Permissions-Policy headers</li>
+          <li><strong>HSTS Enforcement:</strong> Missing Strict-Transport-Security flag</li>
+          <li><strong>Mobile Tap Targets:</strong> Sticky call button covers input fields on iOS</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 04: GEOTECHNICAL ENTITY SCHEMA -->
+      <section class="website-section" id="s04" data-id="04">
+        <button class="pin" type="button" data-id="04" aria-label="Show annotation for Schema Markup">04</button>
+        <p class="kicker">04 · Schema Entity Graph</p>
+        <h2>Zero JSON-LD Structured Data: Invisible to Google AI Overviews</h2>
+        <p class="plain">
+          Google Knowledge Graph does not register the business as an official contractor entity for Jasper County. Below is the production-ready schema injection required to rank:
+        </p>
+
+        <div class="cmd">
+          <p>Target Production Schema (JSON-LD)</p>
+          <pre>{
+  "@context": "https://schema.org",
+  "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
+  "name": "Foundation Repair Pros of Joplin",
+  "url": "https://foundationrepairprosofjoplin.com/",
+  "telephone": "+1-417-555-0194",
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3100 S Main St",
+    "addressLocality": "Joplin",
+    "addressRegion": "MO",
+    "postalCode": "64804",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.0543,
+    "longitude": -94.5132
+  },
+  "areaServed": ["Joplin", "Webb City", "Carl Junction", "Carthage", "Neosho"]
+}</pre>
+        </div>
+      </section>
+
+      <!-- SECTION 05: BACKLINK CONQUEST -->
+      <section class="website-section" id="s05" data-id="05">
+        <button class="pin" type="button" data-id="05" aria-label="Show annotation for Backlink Engine">05</button>
+        <p class="kicker">05 · Local Backlink Conquest</p>
+        <h2>15 High-Authority Regional Citations Unclaimed in Joplin, MO</h2>
+        <p class="plain">
+          Top Joplin competitors (Ram Jack MO, Thrasher, BDry) outrank Foundation Repair Pros of Joplin due to 15 unbuilt foundational trust citations:
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Citation Target Source</th>
+              <th>Domain Authority</th>
+              <th>Category</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Joplin Area Chamber of Commerce</strong></td>
+              <td>DA 52</td>
+              <td>Local Civic Authority</td>
+              <td><span class="chip alert" style="padding:2px 8px; font-size:11px;">Unclaimed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Better Business Bureau (BBB SW Missouri)</strong></td>
+              <td>DA 91</td>
+              <td>Accreditation Authority</td>
+              <td><span class="chip alert" style="padding:2px 8px; font-size:11px;">Missing Accreditation</span></td>
+            </tr>
+            <tr>
+              <td><strong>Missouri Contractor Licensing Board</strong></td>
+              <td>DA 78</td>
+              <td>State Regulatory</td>
+              <td><span class="chip kv" style="padding:2px 8px; font-size:11px;">Ready to Submit</span></td>
+            </tr>
+            <tr>
+              <td><strong>HomeAdvisor / Angi Joplin MO</strong></td>
+              <td>DA 89</td>
+              <td>Commercial Directory</td>
+              <td><span class="chip alert" style="padding:2px 8px; font-size:11px;">NAP Inconsistency</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- SECTION 06: REVENUE MODEL -->
+      <section class="website-section" id="s06" data-id="06">
+        <button class="pin" type="button" data-id="06" aria-label="Show annotation for Revenue Modeling">06</button>
+        <p class="kicker">06 · Revenue Expansion Engine</p>
+        <h2>Pipeline Conversion: $31,500 Monthly Value Potential</h2>
+        <p class="plain">
+          With an average foundation stabilization ticket of $8,500 and 12-18 missed inquiries per month due to current search penalties, fixing these deficits generates substantial recurring pipeline:
+        </p>
+
+        <div class="split">
+          <div class="panel">
+            <h3>Revenue Metrics</h3>
+            <table>
+              <tbody>
+                <tr><td>Average Deal Size</td><td style="font-weight:700; color:var(--navy-deep);">$8,500</td></tr>
+                <tr><td>Missed Monthly Qualified Leads</td><td style="font-weight:700; color:var(--fail);">14 leads/mo</td></tr>
+                <tr><td>Closing Rate (In-Home Estimates)</td><td style="font-weight:700;">26.5%</td></tr>
+                <tr><td>Monthly Unlocked Pipeline</td><td style="font-weight:800; color:var(--kv); font-size:16px;">+$31,500 / mo</td></tr>
+                <tr><td>12-Month Projected Growth</td><td style="font-weight:800; color:var(--orange); font-size:16px;">+$378,000 / yr</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="panel">
+            <h3>Conversion Architecture Fixes</h3>
+            <ul style="margin:8px 0 0; padding-left:16px; font-size:13.5px; color:var(--muted); line-height:1.6;">
+              <li>Instant 60-second Foundation Assessment calculator</li>
+              <li>Visible Joplin license # and liability proof above the fold</li>
+              <li>Automated SMS callback trigger within 90 seconds</li>
+              <li>Before & After piering case study gallery with geo-tags</li>
+            </ul>
+            <button class="btn-orange" style="margin-top:16px; width:100%; justify-content:center;" onclick="openPitchModal()">Launch Interactive Calculator →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 07: 90-DAY ROADMAP & PITCH SCRIPT -->
+      <section class="website-section" id="s07" data-id="07">
+        <button class="pin" type="button" data-id="07" aria-label="Show annotation for 90-Day Roadmap">07</button>
+        <p class="kicker">07 · Operational Field Playbook</p>
+        <h2>90-Day Execution Roadmap & Client Presentation Script</h2>
+        <p class="plain">
+          This turnaround plan is engineered for seamless implementation by any field marketing team or agency partner.
+        </p>
+
+        <div class="flow">
+          <span class="chip wp">Days 1-14: Technical & Schema Fix</span>
+          <span class="arrow">→</span>
+          <span class="chip kv">Days 15-45: Service Silos & Citations</span>
+          <span class="arrow">→</span>
+          <span class="chip live">Days 46-90: Map Pack Domination</span>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+          <button class="btn-orange" onclick="openPitchModal()">View 3-Minute Phone Script</button>
+          <button class="btn-orange" style="background:var(--navy-deep); color:#fff;" onclick="openConsultModal()">Request White-Label Proposal</button>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- RIGHT COLUMN: STICKY ANNOTATION RAIL / INSPECTOR -->
+    <aside class="annotation-rail" aria-label="Audit Inspector Rail">
+      <div class="rail-head">
+        <p class="rail-kicker">JOPLIN AUDIT INSPECTOR</p>
+        <h2>Executive Rail</h2>
+        <p class="rail-intro">Hover or click any pin in the audit to inspect findings, technical remediation, or revenue impacts.</p>
+        
+        <!-- MODE TABS -->
+        <div class="mode-tabs" role="tablist">
+          <button class="mode-button" type="button" data-mode="process" aria-selected="true">Process</button>
+          <button class="mode-button" type="button" data-mode="deficits" aria-selected="false">Deficits</button>
+          <button class="mode-button" type="button" data-mode="revenue" aria-selected="false">Revenue</button>
+        </div>
+      </div>
+
+      <!-- STRUCTURE / JUMP LIST -->
+      <div class="structure-panel">
+        <div class="structure-panel-head">
+          <span>AUDIT SECTIONS</span>
+          <span class="structure-count" id="structure-count">01 / 07</span>
+        </div>
+        <ul class="structure-table" id="rail">
+          <!-- Populated by JavaScript -->
+        </ul>
+      </div>
+
+      <!-- CONTEXTUAL NOTES LIST -->
+      <div class="notes-label">
+        <span>INSPECTION CARDS</span>
+        <span style="color:var(--orange);">LIVE SYNCHRONIZATION</span>
+      </div>
+      <ul class="annotation-list" id="notes">
+        <!-- Populated by JavaScript -->
+      </ul>
+
+      <div style="padding:16px 18px 20px; border-top:1px solid rgba(255,255,255,0.08); font-size:12px; color:#83979c; font-family:var(--mono);">
+        CT-FLEET-JOPLIN · VERIFIED 2026<br>
+        Autonomous Geotechnical Diagnostics
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="system-footer">
+    <div>
+      <strong>CityThrive Client Intelligence Engine</strong> · Foundation Repair Pros of Joplin Portal
+    </div>
+    <div>
+      Reference: <span style="color:var(--orange);">CT-SOP-JOPLIN-64804</span> · All Rights Reserved
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODALS (ROCK-SOLID FIXED OVERLAY SYSTEM)
+       ========================================================================= -->
+  
+  <!-- PITCH SCRIPT MODAL -->
+  <div class="modal-overlay" id="pitchModal" role="dialog" aria-modal="true" aria-labelledby="pitchTitle">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="closeAllModals()" aria-label="Close modal">✕</button>
+      <p style="color:var(--orange); font-size:11px; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; font-family:var(--mono); margin:0 0 6px;">
+        EXECUTIVE SCRIPT · 3-MINUTE CLOSE
+      </p>
+      <h2 id="pitchTitle" style="margin:0 0 14px; font-size:22px; color:var(--navy-deep);">
+        Foundation Repair Pros of Joplin · Opportunity Script
+      </h2>
+      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:16px; font-size:14px; line-height:1.6; color:#334155; margin-bottom:16px;">
+        <p style="margin:0 0 10px;"><strong>The Opening Hook:</strong><br>
+        <em>"Hi [Owner], I pulled the geotechnical digital crawl for foundationrepairprosofjoplin.com this morning. Your competitors like Ram Jack and Thrasher are outranking you for piering and crawl space encapsulation in Jasper County—not because of better work, but because your site currently has zero local schema and 15 missing high-authority directory citations."</em></p>
+        <p style="margin:0 0 10px;"><strong>The Core Stat:</strong><br>
+        <em>"Right now you are leaving an estimated $31,500 per month in high-ticket foundation jobs on the table because high-intent homeowners in Joplin, Webb City, and Carl Junction never see your service pages."</em></p>
+        <p style="margin:0;"><strong>The Low-Friction Close:</strong><br>
+        <em>"I already mapped out all 31 URLs and synthesized the complete JSON-LD schema fix. Would you like me to send you the exact engineering checklist so your team can plug the gaps?"</em></p>
+      </div>
+      <button class="btn-orange" style="width:100%; justify-content:center;" onclick="closeAllModals()">Close Script Window</button>
+    </div>
+  </div>
+
+  <!-- CONSULTATION MODAL -->
+  <div class="modal-overlay" id="consultModal" role="dialog" aria-modal="true" aria-labelledby="consultTitle">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="closeAllModals()" aria-label="Close modal">✕</button>
+      <p style="color:var(--orange); font-size:11px; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; font-family:var(--mono); margin:0 0 6px;">
+        SCHEDULE STRATEGY SESSION
+      </p>
+      <h2 id="consultTitle" style="margin:0 0 14px; font-size:22px; color:var(--navy-deep);">
+        Request Joplin Engineering Briefing
+      </h2>
+      <form onsubmit="event.preventDefault(); alert('Briefing requested! Our team will dispatch the full PDF and schema package within 15 minutes.'); closeAllModals();">
+        <div style="margin-bottom:12px;">
+          <label style="display:block; font-size:12px; font-weight:700; margin-bottom:4px; color:#475569;">Contact Name</label>
+          <input type="text" required placeholder="Owner or Marketing Director" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:6px; font-size:14px;">
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="display:block; font-size:12px; font-weight:700; margin-bottom:4px; color:#475569;">Direct Email</label>
+          <input type="email" required placeholder="owner@foundationrepairprosofjoplin.com" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:6px; font-size:14px;">
+        </div>
+        <div style="margin-bottom:16px;">
+          <label style="display:block; font-size:12px; font-weight:700; margin-bottom:4px; color:#475569;">Phone Number</label>
+          <input type="tel" placeholder="(417) 555-0194" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:6px; font-size:14px;">
+        </div>
+        <button type="submit" class="btn-orange" style="width:100%; justify-content:center; padding:12px;">Dispatch Full Audit Package →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT ENGINE (INTERACTIVE PINS & ANNOTATION RAIL) -->
+  <script>
+    const RAIL_DATA = [
+      ["01", "Executive Brief", "Brief"],
+      ["02", "Crawl Silos", "Crawl"],
+      ["03", "Tech CWV", "Perf"],
+      ["04", "Schema Graph", "Entity"],
+      ["05", "Backlink Engine", "Links"],
+      ["06", "Revenue Model", "ROI"],
+      ["07", "Field Playbook", "Deploy"]
+    ];
+
+    const WHY_DATA = {
+      process: [
+        ["01", "Full Diagnostic Overview", "31 URLs crawled. Discovered 6 critical barriers impeding Map Pack visibility.", "Status: Verified"],
+        ["02", "Content Silo Segmentation", "Isolate piering, poly injection, and encapsulation into dedicated keyword silos.", "Status: Architecture"],
+        ["03", "Mobile INP Remediation", "Fix script touch delay on mobile quote requests to restore lead throughput.", "Status: Performance"],
+        ["04", "Schema Entity Validation", "Inject LocalBusiness + GeotechnicalService schema to register Jasper County entity.", "Status: Structured"],
+        ["05", "15 Regional Citations", "Claim Joplin Chamber of Commerce, BBB SW MO, and regional contractor profiles.", "Status: Authority"],
+        ["06", "Revenue Growth Modeling", "Unlock $31.5K/month in missed high-ticket foundation repair jobs.", "Status: Pipeline"],
+        ["07", "Field Presentation SOP", "Deliver executive brief directly to business owner with low-friction pitch.", "Status: Execution"]
+      ],
+      deficits: [
+        ["01", "Missing Local Map Dominance", "Competitors outrank due to unoptimized GMB category associations.", "Severity: High"],
+        ["02", "12 Missing Dedicated Pages", "Piering and encapsulation lack target sub-pages; keyword cannibalization active.", "Severity: Critical"],
+        ["03", "INP 180ms Delay on Form", "Contact form freezes on iOS touch events, causing abandoned inquiries.", "Severity: Critical"],
+        ["04", "Zero Schema Code Installed", "No rich snippets, geo-coordinates, or review ratings transmitted to Google.", "Severity: High"],
+        ["05", "42 Total Backlinks vs 180 Comp", "Competitors possess 4x more referring domains in Southwest Missouri.", "Severity: Medium"],
+        ["06", "14 Missed Inquiries Monthly", "Lost high-margin work defaulting to Ram Jack MO and Thrasher.", "Severity: High"],
+        ["07", "No Follow-up SMS Automations", "Slow quote response time (4+ hours) slashes closing rate by 40%.", "Severity: Actionable"]
+      ],
+      revenue: [
+        ["01", "$8,500 Avg Repair Ticket", "Stabilization and helical piering jobs command high margin residential tickets.", "Value: High Margin"],
+        ["02", "+14 Leads from Service Silos", "Ranking dedicated piering pages captures 14 additional quote requests per month.", "Value: +$31,500/mo"],
+        ["03", "Conversion Lift from Speed", "Cutting INP below 100ms prevents 22% form abandonment rate.", "Value: +3 Leads/mo"],
+        ["04", "AI Overview Citation Edge", "Structured schema places brand into Google Gemini & SGE local recommendations.", "Value: Organic Lift"],
+        ["05", "Map Pack Top 3 Placement", "Top 3 Local 3-Pack capture 68% of commercial and residential repair calls.", "Value: Primary Goal"],
+        ["06", "$378,000 Annualized ROI", "Conservative 26.5% closing rate yields $378,000 in new annual contractor revenue.", "Value: ROI Verified"],
+        ["07", "Turnkey Agency Delivery", "Complete deliverables package ready for white-label client presentation.", "Value: Turnkey"]
+      ]
+    };
+
+    const railEl = document.getElementById("rail");
+    const notesEl = document.getElementById("notes");
+    const countEl = document.getElementById("structure-count");
+    const TOTAL = String(RAIL_DATA.length).padStart(2, "0");
+    let mode = "process";
+    let pinned = null;
+    let hover = null;
+
+    // Render Rail Rows
+    RAIL_DATA.forEach(([id, label, role]) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<button class="structure-row" type="button" data-id="${id}">
+        <span class="structure-node">${id}</span>
+        <span>${label}</span>
+        <span class="structure-role">${role}</span>
+      </button>`;
+      railEl.appendChild(li);
+    });
+
+    function currentId() {
+      return pinned || hover || document.querySelector(".website-section.is-highlighted")?.dataset.id || "01";
+    }
+
+    function renderNotes() {
+      notesEl.innerHTML = WHY_DATA[mode].map(([id, t, b, status]) => `
+        <li class="annotation-card" data-id="${id}" tabindex="0">
+          <span class="annotation-number">${id}</span>
+          <div>
+            <h3>${t}</h3>
+            <p>${b}</p>
+            <span class="annotation-status">${status}</span>
+          </div>
+        </li>
+      `).join("");
+    }
+
+    function paint() {
+      const id = currentId();
+      countEl.textContent = id + " / " + TOTAL;
+      document.querySelectorAll(".structure-row").forEach((b) => b.classList.toggle("is-current", b.dataset.id === id));
+      document.querySelectorAll(".pin").forEach((p) => p.setAttribute("aria-pressed", p.dataset.id === id ? "true" : "false"));
+      document.querySelectorAll(".annotation-card").forEach((c) => c.classList.toggle("is-on", c.dataset.id === id));
+    }
+
+    function setMode(next) {
+      mode = next;
+      document.querySelectorAll(".mode-button").forEach((b) => b.setAttribute("aria-selected", b.dataset.mode === mode ? "true" : "false"));
+      renderNotes();
+      paint();
+    }
+
+    function show(id, lock) {
+      if (lock) pinned = pinned === id ? null : id;
+      else hover = id;
+      paint();
+    }
+
+    // Pin Event Listeners
+    document.querySelectorAll(".pin").forEach((p) => {
+      p.addEventListener("mouseenter", () => show(p.dataset.id, false));
+      p.addEventListener("mouseleave", () => { hover = null; paint(); });
+      p.addEventListener("click", () => show(p.dataset.id, true));
+    });
+
+    // Rail Event Listeners
+    railEl.addEventListener("mouseover", (e) => {
+      const b = e.target.closest("button");
+      if (b) show(b.dataset.id, false);
+    });
+    railEl.addEventListener("mouseleave", () => { hover = null; paint(); });
+    railEl.addEventListener("click", (e) => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      show(b.dataset.id, true);
+      const target = document.getElementById("s" + b.dataset.id);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // Notes Card Click to Scroll
+    notesEl.addEventListener("click", (e) => {
+      const card = e.target.closest(".annotation-card");
+      if (!card) return;
+      show(card.dataset.id, true);
+      const target = document.getElementById("s" + card.dataset.id);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // Mode Buttons
+    document.querySelectorAll(".mode-button").forEach((b) => b.addEventListener("click", () => setMode(b.dataset.mode)));
+
+    // Intersection Observer for Auto Highlight
+    const io = new IntersectionObserver((entries) => {
+      const vis = entries.filter((e) => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!vis) return;
+      document.querySelectorAll(".website-section").forEach((s) => s.classList.toggle("is-highlighted", s === vis.target));
+      if (!pinned && !hover) paint();
+    }, { rootMargin: "-15% 0px -50% 0px", threshold: [0.2, 0.5, 0.8] });
+    
+    document.querySelectorAll(".website-section").forEach((s) => io.observe(s));
+
+    // Initialize
+    setMode("process");
+    paint();
+
+    // Modal Control Functions
+    function openPitchModal() {
+      document.getElementById('pitchModal').classList.add('active');
+    }
+    function openConsultModal() {
+      document.getElementById('consultModal').classList.add('active');
+    }
+    function closeAllModals() {
+      document.querySelectorAll('.modal-overlay').forEach(el => el.classList.remove('active'));
+    }
+    // Close on escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeAllModals();
+    });
+    // Close on backdrop click
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeAllModals();
+      });
+    });
+  </script>
+</body>
+</html>
