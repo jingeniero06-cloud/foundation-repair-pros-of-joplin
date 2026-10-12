@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Task Dashboard | GoMega & ClickUp Hybrid Studio</title>
+  <meta name="description" content="Multi-client admin task dashboard with GoMega board view, ClickUp checklists, interactive drag-and-drop Kanban, and real-time agency workflows.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Jost:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/tasks.css">
+  <link rel="icon" type="image/png" href="https://foundationrepairprosofjoplin.com/wp-content/uploads/2022/09/Foundation-Repair-Pros-of-Joplin-Logo-1-150x143.png">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- LEFT NAVIGATION SIDEBAR (GOMEGA STYLE) -->
+    <aside class="sidebar" id="appSidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-wrapper" title="Go to Joplin Portal">
+          <div class="brand-logo-icon">M</div>
+          <div>
+            <div>Mega <span style="font-weight:400; color:var(--text-dim); font-size:0.9rem;">/ Admin</span></div>
+            <div class="brand-client-tag">Agency Portfolio ▾</div>
+          </div>
+        </a>
+        <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-label="Toggle sidebar width">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">👥</span>
+            <span class="sidebar-item-label">Customers</span>
+          </div>
+        </a>
+
+        <a href="#" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">📥</span>
+            <span class="sidebar-item-label">Inbox</span>
+          </div>
+          <span class="sidebar-badge">99+</span>
+        </a>
+
+        <a href="tasks.html" class="sidebar-item active">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">☑️</span>
+            <span class="sidebar-item-label">My Tasks</span>
+          </div>
+        </a>
+
+        <a href="#" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">📚</span>
+            <span class="sidebar-item-label">Knowledge Library</span>
+          </div>
+        </a>
+
+        <div class="sidebar-group-title">Agency Modules</div>
+
+        <a href="audit.html" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">🔍</span>
+            <span class="sidebar-item-label">SEO Audit (31 URLs)</span>
+          </div>
+          <span class="sidebar-item-arrow" style="font-size:0.75rem; color:var(--text-dim);">›</span>
+        </a>
+
+        <a href="backlinks.html" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">🔗</span>
+            <span class="sidebar-item-label">Backlinks CRM</span>
+          </div>
+          <span class="sidebar-item-arrow" style="font-size:0.75rem; color:var(--text-dim);">›</span>
+        </a>
+
+        <a href="calculators.html" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">🧮</span>
+            <span class="sidebar-item-label">Calculators</span>
+          </div>
+          <span class="sidebar-item-arrow" style="font-size:0.75rem; color:var(--text-dim);">›</span>
+        </a>
+
+        <a href="#" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">⚡</span>
+            <span class="sidebar-item-label">Workstreams</span>
+          </div>
+          <span class="sidebar-item-arrow" style="font-size:0.75rem; color:var(--text-dim);">›</span>
+        </a>
+
+        <a href="#" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">🚀</span>
+            <span class="sidebar-item-label">Onboarding</span>
+          </div>
+          <span class="sidebar-item-arrow" style="font-size:0.75rem; color:var(--text-dim);">›</span>
+        </a>
+
+        <a href="#" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">🎯</span>
+            <span class="sidebar-item-label">Paid Lead Gen</span>
+          </div>
+          <span class="sidebar-item-arrow" style="font-size:0.75rem; color:var(--text-dim);">›</span>
+        </a>
+
+        <a href="#" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">📈</span>
+            <span class="sidebar-item-label">Conversion Ops</span>
+          </div>
+          <span class="sidebar-item-arrow" style="font-size:0.75rem; color:var(--text-dim);">›</span>
+        </a>
+
+        <a href="#" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">🤖</span>
+            <span class="sidebar-item-label">MegaClaw Agents</span>
+          </div>
+          <span class="sidebar-item-arrow" style="font-size:0.75rem; color:var(--text-dim);">›</span>
+        </a>
+
+        <div class="sidebar-group-title">System</div>
+
+        <a href="index.html" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">🌐</span>
+            <span class="sidebar-item-label">Public Portal</span>
+          </div>
+        </a>
+
+        <a href="theme-studio.html" class="sidebar-item">
+          <div class="sidebar-item-left">
+            <span class="sidebar-item-icon">🎨</span>
+            <span class="sidebar-item-label">Theme Studio</span>
+          </div>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="index.html" style="font-size:0.78rem; color:var(--text-muted); display:flex; align-items:center; gap:6px;">
+          <span>←</span> Back to Joplin Overview
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN APPLICATION STAGE -->
+    <main class="main-stage">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <select id="customerFilterSelect" class="customer-selector" aria-label="Filter tasks by customer">
+            <option value="all">🏢 All Customers (Portfolio)</option>
+            <option value="Foundation Repair Pros of Joplin" selected>🏗️ Foundation Repair Pros of Joplin</option>
+            <option value="Bay Management Group">🏢 Bay Management Group</option>
+            <option value="GAMA Insurance Agency LLC">🛡️ GAMA Insurance Agency LLC</option>
+            <option value="Specialty Roofing Inc">🏠 Specialty Roofing Inc</option>
+            <option value="Hardscape.com">🧱 Hardscape.com</option>
+            <option value="The Charles Chateau">🏰 The Charles Chateau</option>
+            <option value="Infinite Wellness">🌿 Infinite Wellness</option>
+            <option value="LevelWorks Construct & Renovate">🔨 LevelWorks Construct & Renovate</option>
+            <option value="Approach Tours">✈️ Approach Tours</option>
+            <option value="Harmony 783">👟 Harmony 783</option>
+          </select>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Search box with Ctrl+K indicator -->
+          <div class="search-box">
+            <span>🔍</span>
+            <input type="text" id="taskSearchInput" placeholder="Search tasks, clients, tags...">
+            <span class="kbd-shortcut">Ctrl K</span>
+          </div>
+
+          <!-- Notification bell -->
+          <button class="icon-action-btn" title="22 Unread Notifications">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="notification-dot">22</span>
+          </button>
+
+          <!-- Light/Dark Mode Toggle -->
+          <button class="icon-action-btn" id="themeToggleBtn" title="Toggle Light / Petroleum Blueprint Dark">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </button>
+
+          <!-- User Profile Avatar -->
+          <div class="user-avatar" title="Signed in as Master Admin">
+            MA
+          </div>
+        </div>
+      </header>
+
+      <!-- SUBHEADER / TOOLBAR -->
+      <section class="task-toolbar">
+        <div class="task-toolbar-left">
+          <h1 class="task-page-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            My Tasks
+          </h1>
+
+          <select id="assigneeFilterSelect" class="toolbar-pill" aria-label="Filter by assignee">
+            <option value="myself" selected>👤 Myself</option>
+            <option value="all">👥 All Team Members</option>
+          </select>
+
+          <!-- View Switcher (Board vs List) -->
+          <div class="view-mode-switcher">
+            <button class="view-btn active" id="btnBoardView">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/></svg>
+              Board
+            </button>
+            <button class="view-btn" id="btnListView">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              List
+            </button>
+          </div>
+
+          <button id="autoRefreshBtn" class="auto-refresh-pill" title="Toggle 30-second live polling">
+            ⟳ Auto 30s: Off
+          </button>
+        </div>
+
+        <div class="task-toolbar-right">
+          <button class="btn-secondary-tool" id="btnUploadCsv" title="Import tasks from CSV file">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Upload CSV
+          </button>
+          <input type="file" id="csvFileInput" accept=".csv" style="display:none;">
+
+          <button class="btn-secondary-tool" id="btnExportCsv" title="Export tasks to CSV spreadsheet">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export CSV
+          </button>
+
+          <button class="btn-secondary-tool" id="btnResetDefaults" title="Restore default dataset">
+            ↻ Reset
+          </button>
+
+          <button class="btn-primary-action" id="btnNewTask">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            New Task
+          </button>
+        </div>
+      </section>
+
+      <!-- KANBAN BOARD CONTAINER (6 GOMEGA + CLICKUP COLUMNS) -->
+      <section class="board-container" id="kanbanBoardView">
+        <!-- 1. Not Started -->
+        <div class="kanban-column col-not-started" data-status="not-started">
+          <div class="column-header">
+            <div class="column-header-title">
+              <span class="col-indicator"></span>
+              <span>Not Started</span>
+              <span class="column-counter" id="count-not-started">0</span>
+            </div>
+          </div>
+          <div class="column-cards" id="cards-not-started"></div>
+          <button class="col-add-task-btn" onclick="openNewTaskModal('not-started')">+ Add Task</button>
+        </div>
+
+        <!-- 2. In Progress -->
+        <div class="kanban-column col-in-progress" data-status="in-progress">
+          <div class="column-header">
+            <div class="column-header-title">
+              <span class="col-indicator"></span>
+              <span>In Progress</span>
+              <span class="column-counter" id="count-in-progress">0</span>
+            </div>
+          </div>
+          <div class="column-cards" id="cards-in-progress"></div>
+          <button class="col-add-task-btn" onclick="openNewTaskModal('in-progress')">+ Add Task</button>
+        </div>
+
+        <!-- 3. Blocked -->
+        <div class="kanban-column col-blocked" data-status="blocked">
+          <div class="column-header">
+            <div class="column-header-title">
+              <span class="col-indicator"></span>
+              <span>Blocked</span>
+              <span class="column-counter badge-danger" id="count-blocked">0</span>
+            </div>
+          </div>
+          <div class="column-cards" id="cards-blocked"></div>
+          <button class="col-add-task-btn" onclick="openNewTaskModal('blocked')">+ Add Task</button>
+        </div>
+
+        <!-- 4. Failed -->
+        <div class="kanban-column col-failed" data-status="failed">
+          <div class="column-header">
+            <div class="column-header-title">
+              <span class="col-indicator"></span>
+              <span>Failed</span>
+              <span class="column-counter" id="count-failed">0</span>
+            </div>
+          </div>
+          <div class="column-cards" id="cards-failed"></div>
+          <button class="col-add-task-btn" onclick="openNewTaskModal('failed')">+ Add Task</button>
+        </div>
+
+        <!-- 5. Needs Review -->
+        <div class="kanban-column col-needs-review" data-status="needs-review">
+          <div class="column-header">
+            <div class="column-header-title">
+              <span class="col-indicator"></span>
+              <span>Needs Review</span>
+              <span class="column-counter badge-warning" id="count-needs-review">0</span>
+            </div>
+          </div>
+          <div class="column-cards" id="cards-needs-review"></div>
+          <button class="col-add-task-btn" onclick="openNewTaskModal('needs-review')">+ Add Task</button>
+        </div>
+
+        <!-- 6. Completed -->
+        <div class="kanban-column col-completed" data-status="completed">
+          <div class="column-header">
+            <div class="column-header-title">
+              <span class="col-indicator"></span>
+              <span>Completed</span>
+              <span class="column-counter badge-success" id="count-completed">0</span>
+            </div>
+          </div>
+          <div class="column-cards" id="cards-completed"></div>
+          <button class="col-add-task-btn" onclick="openNewTaskModal('completed')">+ Add Task</button>
+        </div>
+      </section>
+
+      <!-- LIST VIEW CONTAINER (CLICKUP TABLE SYSTEM) -->
+      <section class="list-view-container" id="taskListView">
+        <table class="task-table">
+          <thead>
+            <tr>
+              <th style="width:40px; text-align:center;">✓</th>
+              <th style="width:85px;">Task ID</th>
+              <th>Task Title</th>
+              <th>Client / Account</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>Due Date</th>
+            </tr>
+          </thead>
+          <tbody id="taskListTbody"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <!-- TASK DETAIL MODAL (CLICKUP STYLE INSPECTOR) -->
+  <div class="modal-overlay" id="taskDetailModal" role="dialog" aria-modal="true" aria-labelledby="detailTaskTitle">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div>
+          <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Task Inspector</span>
+          <h3 id="detailTaskTitle" style="margin:4px 0 0; font-size:1.25rem; color:var(--text-main);">Task Title</h3>
+          <span id="detailTaskClient" style="font-size:0.82rem; color:var(--primary); font-weight:600;">Client Name</span>
+        </div>
+        <button data-close-modal style="background:transparent; border:none; font-size:1.4rem; cursor:pointer; color:var(--text-muted);">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+          <div>
+            <label style="display:block; font-size:0.78rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">Stage Status</label>
+            <select id="detailTaskStatus" style="width:100%; padding:9px 12px; border-radius:8px; border:1px solid var(--border-subtle); background:var(--bg-app); color:var(--text-main); font-weight:600;">
+              <option value="not-started">Not Started</option>
+              <option value="in-progress">In Progress</option>
+              <option value="blocked">Blocked</option>
+              <option value="failed">Failed</option>
+              <option value="needs-review">Needs Review</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display:block; font-size:0.78rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">Priority Level</label>
+            <select id="detailTaskPriority" style="width:100%; padding:9px 12px; border-radius:8px; border:1px solid var(--border-subtle); background:var(--bg-app); color:var(--text-main); font-weight:600;">
+              <option value="P0">P0 (Critical / Blocker)</option>
+              <option value="P1">P1 (High Priority)</option>
+              <option value="P2">P2 (Medium Priority)</option>
+              <option value="P4">P4 (Normal)</option>
+              <option value="P10">P10 (Low Priority)</option>
+              <option value="P-10">P-10 (Scheduled Archive)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label style="display:block; font-size:0.78rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">Description & Technical Scope</label>
+          <textarea id="detailTaskDesc" rows="3" style="width:100%; padding:10px 14px; border-radius:8px; border:1px solid var(--border-subtle); background:var(--bg-app); color:var(--text-main); font-family:inherit; font-size:0.9rem;" placeholder="Add detailed notes or requirements..."></textarea>
+        </div>
+
+        <!-- ClickUp Style Subtasks / Checklist -->
+        <div class="checklist-group">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <label style="font-size:0.82rem; font-weight:700; text-transform:uppercase; color:var(--text-muted);">Subtask Checklist</label>
+            <span style="font-size:0.75rem; color:var(--text-dim);">Live ClickUp tracking</span>
+          </div>
+
+          <div id="detailChecklistContainer"></div>
+
+          <div style="display:flex; gap:8px; margin-top:12px;">
+            <input type="text" id="newChecklistInput" placeholder="Add a subtask..." style="flex:1; padding:7px 12px; border-radius:6px; border:1px solid var(--border-subtle); font-size:0.84rem; background:var(--bg-card); color:var(--text-main);">
+            <button onclick="addChecklistItem()" style="padding:7px 14px; border-radius:6px; background:var(--primary); color:#ffffff; border:none; font-size:0.82rem; font-weight:700; cursor:pointer;">+ Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="btnDeleteTask" style="background:transparent; border:1px solid var(--danger); color:var(--danger); padding:8px 16px; border-radius:8px; font-weight:700; cursor:pointer; font-size:0.82rem;">
+          Delete Task
+        </button>
+        <button data-close-modal style="background:var(--primary); border:none; color:#ffffff; padding:8px 20px; border-radius:8px; font-weight:700; cursor:pointer; font-size:0.82rem;">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREATE NEW TASK MODAL -->
+  <div class="modal-overlay" id="newTaskModal" role="dialog" aria-modal="true" aria-labelledby="newTaskModalTitle">
+    <div class="modal-window" style="max-width:580px;">
+      <div class="modal-header">
+        <h3 id="newTaskModalTitle" style="margin:0; font-size:1.2rem; color:var(--text-main);">Create New Task</h3>
+        <button data-close-modal style="background:transparent; border:none; font-size:1.4rem; cursor:pointer; color:var(--text-muted);">&times;</button>
+      </div>
+
+      <form id="newTaskForm">
+        <div class="modal-body">
+          <div>
+            <label style="display:block; font-size:0.78rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">Task Title *</label>
+            <input type="text" id="newTitle" required placeholder="e.g. Implement City of Joplin Local Schema JSON-LD" style="width:100%; padding:10px 14px; border-radius:8px; border:1px solid var(--border-subtle); background:var(--bg-app); color:var(--text-main); font-size:0.9rem;">
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
+            <div>
+              <label style="display:block; font-size:0.78rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">Client Account *</label>
+              <select id="newClient" required style="width:100%; padding:9px 12px; border-radius:8px; border:1px solid var(--border-subtle); background:var(--bg-app); color:var(--text-main); font-size:0.85rem;">
+                <option value="Foundation Repair Pros of Joplin" selected>Foundation Repair Pros of Joplin</option>
+                <option value="Bay Management Group">Bay Management Group</option>
+                <option value="GAMA Insurance Agency LLC">GAMA Insurance Agency LLC</option>
+                <option value="Specialty Roofing Inc">Specialty Roofing Inc</option>
+                <option value="Hardscape.com">Hardscape.com</option>
+                <option value="The Charles Chateau">The Charles Chateau</option>
+                <option value="Infinite Wellness">Infinite Wellness</option>
+                <option value="LevelWorks Construct & Renovate">LevelWorks Construct & Renovate</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="display:block; font-size:0.78rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">Service Category</label>
+              <select id="newCategory" style="width:100%; padding:9px 12px; border-radius:8px; border:1px solid var(--border-subtle); background:var(--bg-app); color:var(--text-main); font-size:0.85rem;">
+                <option value="Technical SEO">Technical SEO</option>
+                <option value="On-Page SEO">On-Page SEO</option>
+                <option value="Conversion">Conversion</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Outreach">Outreach</option>
+                <option value="Content">Content</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:14px;">
+            <div>
+              <label style="display:block; font-size:0.78rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">Initial Column</label>
+              <select id="newStatus" style="width:100%; padding:9px 12px; border-radius:8px; border:1px solid var(--border-subtle); background:var(--bg-app); color:var(--text-main); font-size:0.85rem;">
+                <option value="not-started">Not Started</option>
+                <option value="in-progress">In Progress</option>
+                <option value="blocked">Blocked</option>
+                <option value="needs-review">Needs Review</option>
+                <option value="completed">Completed</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="display:block; font-size:0.78rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">Priority</label>
+              <select id="newPriority" style="width:100%; padding:9px 12px; border-radius:8px; border:1px solid var(--border-subtle); background:var(--bg-app); color:var(--text-main); font-size:0.85rem;">
+                <option value="P0">P0 (Critical)</option>
+                <option value="P1" selected>P1 (High)</option>
+                <option value="P2">P2 (Medium)</option>
+                <option value="P4">P4 (Normal)</option>
+                <option value="P10">P10 (Low)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="display:block; font-size:0.78rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">Due Date</label>
+              <input type="text" id="newDueDate" placeholder="e.g. Tomorrow" style="width:100%; padding:9px 12px; border-radius:8px; border:1px solid var(--border-subtle); background:var(--bg-app); color:var(--text-main); font-size:0.85rem;">
+            </div>
+          </div>
+
+          <div>
+            <label style="display:block; font-size:0.78rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">Technical Notes / Scope</label>
+            <textarea id="newDescription" rows="2" placeholder="Brief technical context..." style="width:100%; padding:10px 14px; border-radius:8px; border:1px solid var(--border-subtle); background:var(--bg-app); color:var(--text-main); font-size:0.88rem; font-family:inherit;"></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" data-close-modal style="background:transparent; border:1px solid var(--border-strong); padding:8px 16px; border-radius:8px; font-weight:600; cursor:pointer;">
+            Cancel
+          </button>
+          <button type="submit" style="background:var(--primary); color:#ffffff; border:none; padding:8px 22px; border-radius:8px; font-weight:700; cursor:pointer;">
+            Create Task
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/tasks.js"></script>
+</body>
+</html>
