@@ -1,49 +1,55 @@
 /* ==========================================================================
    Foundation Repair Pros of Joplin — Engineering & Property Intelligence Suite
-   SOP Machine Blueprint Design System (Industrial Blueprint & High-Precision Forensic)
+   Kherk Roldan SEO Design System (Clash Grotesk + Inter Tight + Electric Orange)
+   Direct Architecture from https://kherkroldanseo.com/
    ========================================================================== */
 
+@import url('https://api.fontshare.com/v2/css?f[]=clash-grotesk@300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:ital,wght@0,300..900;1,300..900&family=Manrope:wght@400;500;600;700;800&display=swap');
+
 :root {
-  /* SOP Machine Blueprint Design System */
-  --navy-deep: #0b1c22;
-  --ink: #0b1c22;               /* Deep Petroleum Navy */
-  --ink-2: #081a21;             /* Terminal Black/Navy */
-  --ink-3: #10262d;             /* Petroleum Surface */
-  --paper: #dfe4e5;             /* Blueprint Light Grid Canvas */
-  --paper-2: #f3f5f6;           /* Crisp Panel Background */
-  --paper-card: #ffffff;        /* Pure White High-Contrast Card */
-  --text: #1b1b1b;              /* Stark Pitch Charcoal Ink (100% Legibility) */
-  --muted: #5b6a70;             /* Cool Technical Graphite */
-  --muted-light: #9fb0b4;       /* Text on Deep Petroleum */
+  /* Kherk Roldan SEO Design System Tokens */
+  --navy-deep: #141414;
+  --ink: #191919;               /* Pitch Charcoal Black (#191919 from kherkroldanseo.com) */
+  --ink-2: #111111;             /* Pure Deep Dark */
+  --ink-3: #222222;             /* Surface Charcoal */
+  --paper: #FAF4EF;             /* Warm Editorial Sand / Linen Canvas (#FAF4EF from kherkroldanseo.com) */
+  --paper-2: #F5EFEB;           /* Crisp Sand Surface */
+  --paper-card: #FFFFFF;        /* Pure White High-Contrast Card */
+  --text: #191919;              /* Pitch Charcoal Ink (100% Legibility) */
+  --muted: #666666;             /* Warm Medium Gray (#737373 / #666666) */
+  --muted-light: #A3A3A3;       /* Subtext on Deep Dark */
   
-  /* High-Visibility Signal Accents */
-  --gold: #e9880b;              /* Safety Hazard Amber (Primary Accent) */
-  --gold-2: #f59e0b;            /* Bright Amber Shimmer */
-  --bmg-blue: #2f67f6;          /* Engineering Cobalt */
-  --bmg-navy: #0b1c22;          /* Petroleum Deep */
-  --teal: #0f766e;              /* Signal KV Teal */
-  --green: #16a34a;             /* Success Green */
-  --amber: #e9880b;             /* Safety Amber */
-  --red: #b4233a;               /* Alert Red */
+  /* Signature Brand Accent: Kherk Roldan Electric Orange */
+  --gold: #FE6706;              /* Electric Tangerine Orange (#FE6706 from kherkroldanseo.com) */
+  --gold-2: #FF7B24;            /* Bright Orange Shimmer */
+  --gold-tint: #FFF0E6;         /* Soft Peach Pill Tint (#FFF0E6 from kherkroldanseo.com) */
+  --bmg-blue: #2563EB;          /* Engineering Cobalt */
+  --bmg-navy: #191919;          /* Deep Dark */
+  --teal: #0D9488;              /* Signal KV Teal */
+  --green: #10B981;             /* Success Green */
+  --amber: #FE6706;             /* Electric Orange Accent */
+  --red: #DC2626;               /* Alert Red */
   
   /* Structural Hairlines */
   --line: rgba(255, 255, 255, 0.12);
   --line-strong: rgba(255, 255, 255, 0.22);
-  --line-dark: rgba(19, 43, 52, 0.18);
-  --line-dark-hover: rgba(19, 43, 52, 0.35);
+  --line-dark: #E8E5E1;         /* Kherk Roldan Crisp Border (#E8E5E1 from kherkroldanseo.com) */
+  --line-dark-hover: #FE6706;
   
   /* Precision Radii & Elevation */
-  --radius-sm: 6px;
+  --radius-sm: 8px;
   --radius: 14px;
   --radius-lg: 18px;
   --radius-pill: 9999px;
-  --shadow: 0 20px 55px rgba(12, 30, 36, 0.16);
-  --shadow-card: 0 4px 18px rgba(12, 30, 36, 0.06);
-  --shadow-hover: 0 12px 30px rgba(12, 30, 36, 0.14);
+  --shadow: 0 20px 55px rgba(25, 25, 25, 0.10);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 12px 30px rgba(254, 103, 6, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
   
-  /* Typography: Jost (Architectural Geometric) & IBM Plex Mono */
-  --serif: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --sans: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Typography: Clash Grotesk & Inter Tight / Manrope */
+  --serif: "Clash Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --heading: "Clash Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sans: "Inter Tight", "Manrope", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --max: 1280px;
 }
@@ -65,11 +71,11 @@ body {
   font-size: 15.5px;
   line-height: 1.6;
   color: var(--text);
-  background-color: #dfe4e5;
+  background-color: var(--paper);
   background-image:
-    linear-gradient(rgba(19, 43, 52, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(19, 43, 52, 0.035) 1px, transparent 1px);
-  background-size: 24px 24px;
+    linear-gradient(rgba(232, 229, 225, 0.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 229, 225, 0.45) 1px, transparent 1px);
+  background-size: 32px 32px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -87,8 +93,8 @@ a {
 
 h1, h2, h3, h4 {
   font-family: var(--serif);
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.025em;
   line-height: 1.15;
   margin: 0 0 0.5em;
   color: var(--text);
@@ -113,8 +119,8 @@ p {
    TOP ANNOUNCEMENT BAR
    ========================================================================== */
 .top-strip {
-  background: #081a21;
-  color: #9fb0b4;
+  background: #111111;
+  color: #a3a3a3;
   font-family: var(--mono);
   font-size: 0.8rem;
   min-height: 40px;
@@ -181,14 +187,14 @@ p {
    SITE HEADER & NAVIGATION
    ========================================================================== */
 .site-header {
-  background: rgba(11, 28, 34, 0.98);
+  background: rgba(20, 20, 20, 0.98);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 24px rgba(11, 28, 34, 0.4);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
 }
 .nav {
   display: flex;
@@ -284,8 +290,8 @@ p {
 }
 .nav-links a.active:not(.btn) {
   color: var(--gold) !important;
-  background: rgba(233, 136, 11, 0.15) !important;
-  border: 1px solid rgba(233, 136, 11, 0.4) !important;
+  background: rgba(254, 103, 6, 0.14) !important;
+  border: 1px solid rgba(254, 103, 6, 0.4) !important;
   font-weight: 600;
 }
 
@@ -294,14 +300,14 @@ p {
 .nav-links a.btn-gold,
 .nav-links a.btn {
   background: var(--gold) !important;
-  color: #0b1c22 !important;
-  font-weight: 800 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
   font-size: 0.86rem !important;
   height: 38px !important;
   padding: 0 18px !important;
   border-radius: 999px !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 0 4px 16px -2px rgba(233, 136, 11, 0.45) !important;
+  box-shadow: 0 4px 16px -2px rgba(254, 103, 6, 0.45) !important;
   margin-left: 8px;
   white-space: nowrap !important;
   line-height: 1 !important;
@@ -313,10 +319,10 @@ p {
 .nav-links .btn-gold:hover,
 .nav-links a.btn-gold:hover,
 .nav-links a.btn:hover {
-  background: #f59e0b !important;
-  color: #0b1c22 !important;
+  background: #e05600 !important;
+  color: #ffffff !important;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px -2px rgba(233, 136, 11, 0.65) !important;
+  box-shadow: 0 6px 20px -2px rgba(254, 103, 6, 0.65) !important;
 }
 
 /* Luxury Buttons */
@@ -341,15 +347,15 @@ p {
 }
 .btn-gold {
   background: var(--gold);
-  color: #0b1c22 !important;
-  box-shadow: 0 6px 20px -4px rgba(233, 136, 11, 0.45);
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px -4px rgba(254, 103, 6, 0.45);
   border-color: rgba(255,255,255,0.25);
-  font-weight: 800;
+  font-weight: 700;
 }
 .btn-gold:hover {
-  background: #f59e0b;
-  color: #0b1c22 !important;
-  box-shadow: 0 10px 24px -4px rgba(233, 136, 11, 0.65);
+  background: #e05600;
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px -4px rgba(254, 103, 6, 0.65);
 }
 .btn-ghost {
   border-color: rgba(255, 255, 255, 0.25);
@@ -401,13 +407,13 @@ p {
 }
 
 /* ==========================================================================
-   HERO SECTION (SOP MACHINE BLUEPRINT PALETTE)
+   HERO SECTION (KHERK ROLDAN SEO CHARCOAL & VIBRANT ORANGE PALETTE)
    ========================================================================== */
 .hero {
-  background: #081a21;
+  background: radial-gradient(circle at 85% 20%, rgba(254, 103, 6, 0.16) 0%, transparent 60%), #141414;
   color: #ffffff;
   padding: 80px 0 90px;
-  border-bottom: 1px solid rgba(19, 43, 52, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
 }
@@ -426,10 +432,10 @@ p {
   text-transform: uppercase;
   font-weight: 800;
   color: var(--gold);
-  background: rgba(233, 136, 11, 0.12);
+  background: rgba(254, 103, 6, 0.12);
   padding: 6px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(233, 136, 11, 0.35);
+  border: 1px solid rgba(254, 103, 6, 0.35);
   font-family: var(--mono);
   margin-bottom: 22px;
 }
@@ -894,44 +900,44 @@ table, table.data-table {
   font-size: 0.9rem;
   text-align: left;
   background: #ffffff !important;
-  color: #1b1b1b !important;
+  color: #191919 !important;
 }
 table th, table.data-table th {
-  background: #f3f5f6 !important;
-  color: #5b6a70 !important;
-  font-family: var(--mono);
+  background: #f8f6f2 !important;
+  color: #555555 !important;
+  font-family: var(--heading);
   font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 14px 18px;
-  border-bottom: 1px solid rgba(19, 43, 52, 0.15) !important;
+  border-bottom: 1px solid var(--line-dark) !important;
   white-space: nowrap;
 }
 table td, table.data-table td {
   padding: 14px 18px;
-  border-bottom: 1px solid rgba(19, 43, 52, 0.08) !important;
+  border-bottom: 1px solid #f0ece6 !important;
   vertical-align: middle;
-  color: #1b1b1b !important;
+  color: #191919 !important;
   background: #ffffff !important;
 }
 table tr:hover td, table.data-table tr:hover td {
-  background: #f8fafc !important;
+  background: #fff8f3 !important;
 }
 table tr:last-child td, table.data-table tr:last-child td {
   border-bottom: none;
 }
 table td a {
-  color: #0b1c22 !important;
+  color: #191919 !important;
   font-weight: 600;
   text-decoration: none;
 }
 table td a:hover {
-  color: #2f67f6 !important;
+  color: var(--gold) !important;
   text-decoration: underline;
 }
 table td strong {
-  color: #1b1b1b !important;
+  color: #191919 !important;
 }
 
 /* ==========================================================================

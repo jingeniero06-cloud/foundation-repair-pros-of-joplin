@@ -3,26 +3,29 @@
    Dual-Engine: Enterprise Agency Kanban Board & Multi-Client Task Manager
    ========================================================================== */
 
+@import url('https://api.fontshare.com/v2/css?f[]=clash-grotesk@300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:ital,wght@0,300..900;1,300..900&family=Manrope:wght@400;500;600;700;800&display=swap');
+
 :root {
-  /* Theme Tokens - Light Mode (Default GoMega SaaS Aesthetic) */
-  --bg-app: #f8fafc;
+  /* Theme Tokens - Light Mode (Kherk Roldan SEO SaaS Palette) */
+  --bg-app: #FAF4EF;
   --bg-sidebar: #ffffff;
   --bg-header: #ffffff;
   --bg-card: #ffffff;
-  --bg-column: #f1f5f9;
+  --bg-column: #F5EFEB;
   --bg-column-header: #ffffff;
-  --border-subtle: #e2e8f0;
+  --border-subtle: #E8E5E1;
   --border-strong: #cbd5e1;
   
-  --text-main: #0f172a;
-  --text-muted: #64748b;
+  --text-main: #191919;
+  --text-muted: #666666;
   --text-dim: #94a3b8;
   
-  --primary: #6366f1;           /* Indigo brand accent */
-  --primary-hover: #4f46e5;
-  --primary-light: #eef2ff;
+  --primary: #FE6706;           /* Kherk Roldan Electric Orange */
+  --primary-hover: #E05600;
+  --primary-light: #FFF0E6;
   
-  --gold: #e9880b;              /* Safety hazard amber */
+  --gold: #FE6706;              /* Electric Orange Accent */
   --bmg-blue: #2563eb;          /* Engineering cobalt */
   --danger: #ef4444;
   --danger-light: #fee2e2;
@@ -36,17 +39,18 @@
   --sidebar-width: 250px;
   --sidebar-collapsed-width: 72px;
   --topbar-height: 64px;
-  --radius-sm: 6px;
+  --radius-sm: 8px;
   --radius-md: 10px;
   --radius-lg: 14px;
   --radius-pill: 9999px;
   
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 8px 20px -4px rgba(15, 23, 42, 0.12), 0 4px 8px -2px rgba(15, 23, 42, 0.06);
+  --shadow-hover: 0 8px 20px -4px rgba(254, 103, 6, 0.16), 0 4px 8px -2px rgba(15, 23, 42, 0.06);
   --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
-  --font-sans: 'Jost', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Clash Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: 'Inter Tight', 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
 }
 
@@ -133,8 +137,10 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.18rem;
+  letter-spacing: -0.02em;
   color: var(--text-main);
   text-decoration: none;
   overflow: hidden;
@@ -145,7 +151,7 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+  background: linear-gradient(135deg, #FE6706 0%, #E05600 100%);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -153,7 +159,7 @@ body {
   font-weight: 800;
   font-size: 1.05rem;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 12px rgba(254, 103, 6, 0.35);
 }
 
 .brand-client-tag {
@@ -439,7 +445,9 @@ body {
   align-items: center;
   gap: 10px;
   margin: 0;
-  font-size: 1.45rem;
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
   font-weight: 700;
   color: var(--text-main);
 }
@@ -529,13 +537,13 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 12px rgba(254, 103, 6, 0.35);
   transition: all 0.2s ease;
 }
 .btn-primary-action:hover {
   background: var(--primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 6px 16px rgba(254, 103, 6, 0.45);
 }
 
 .auto-refresh-pill {
@@ -596,11 +604,13 @@ body {
 }
 
 .column-header-title {
+  font-family: var(--font-heading);
   display: flex;
   align-items: center;
   gap: 8px;
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 0.94rem;
+  letter-spacing: -0.01em;
   color: var(--text-main);
 }
 
@@ -695,10 +705,12 @@ body {
 }
 
 .task-card-title {
-  font-size: 0.92rem;
+  font-family: var(--font-heading);
+  font-size: 0.94rem;
   font-weight: 600;
   color: var(--text-main);
-  line-height: 1.4;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
   margin-bottom: 12px;
   word-break: break-word;
 }
